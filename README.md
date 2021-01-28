@@ -1,6 +1,13 @@
 
 # John Fial's GitHub
 
+<!---
+https://dev.to/alekswritescode/easiest-way-to-set-up-your-github-profile-page-3gn8
+ https://github.com/jstrieb/github-stats
+-->
+
+
+
 Some fun GitHub responses:
 - 🔭 I’m currently working on working with a company whose mission I love.
 - 🌱 I’m currently learning the JavaScript library Konva, to build my https://github.com/johnfial/childhood_canvas for my kid.
