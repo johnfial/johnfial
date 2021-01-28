@@ -1,5 +1,5 @@
 
-    <title>John Fial's GitHub</title>
+# John Fial's GitHub
 
 Some fun GitHub responses:
 - 🔭 I’m currently working on working with a company whose mission I love.
