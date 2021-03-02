@@ -1,13 +1,5 @@
-# WORKS LOCALLY BUT DOESN'T MODIFY IN PLACE, especially with their class-based judging system...
-# def removeDuplicates(nums):
-        # temp_array = []
-        # for num in nums:
-        #     if num not in temp_array:
-        #         temp_array.append(num)
-        # # temp_array.sort() # needed?
-        # nums = temp_array
-        # print(nums)
-        # return len(temp_array)
+
+# NOTE, this is their very confusing one...
 
 def removeDuplicates(nums):
     temp_array = []
@@ -26,6 +18,18 @@ def removeDuplicates(nums):
     # print(duplicate_array)
     return len(temp_array) # but not nums, as it should be modified within the class Solution
 
+# aoeu
+# WORKS LOCALLY BUT DOESN'T MODIFY IN PLACE, especially with their class-based judging system...
+# def removeDuplicates(nums):
+        # temp_array = []
+        # for num in nums:
+        #     if num not in temp_array:
+        #         temp_array.append(num)
+        # # temp_array.sort() # needed?
+        # nums = temp_array
+        # print(nums)
+        # return len(temp_array)
+
 # Example 1:
 # Input: nums = [1,1,2]
 # Output: 2, nums = [1,2]
@@ -41,4 +45,6 @@ example_2 = [0,1,2,3,4]
 print(removeDuplicates(example_1))
 
 
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 26 https://leetcode.com/problems/remove-duplicates-from-sorted-array/solution/
