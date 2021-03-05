@@ -1,32 +1,61 @@
 # https://github.com/PdxCodeGuild/Programming101/blob/master/labs/rps.md
 
 import random
+import time
 
-print('Welcome to rock, paper, scissors v1.57386.52.20200903!')
-user_choice = input('Please select your choice of rock, paper, or scissors: ')
+def game(rounds=999):
+    print('Welcome to rock, paper, scissors 2021 v2.2.20210305!')
+    
+    current_round = 1
+    user_wins = 0
+    user_losses = 0
+    
+    while current_round <= rounds:
+        print(f'''~~~~~~~~~~~~~~~~~~~~~~~ Round {current_round} of {rounds}: ''', end="")
+    
+        user_choice = input('Please type either: rock, paper, or scissors: ~~~~~~~~~~~~~~~~ > ')
 
-options = ['rock', 'paper', 'scissors']
+        options = ['rock', 'paper', 'scissors']
+        computer_choice = random.choice(options)
+        print(f'The computer casts. . .')
+        time.sleep(1)
+        print(f'. . .{computer_choice.upper()}! ', end="")
+        # print()
+        
+        # firure out how to wait the text...
 
-computer_choice = random.choice(options)
-print(f'The computer cast. . .: {computer_choice}') # firure out how to wait the text...
+        if user_choice in options:
+            if user_choice == 'rock':
+                    if computer_choice == 'scissors':
+                        print('Your rock smashes feeble scissors and you win!')
+                        user_wins += 1
+                    elif computer_choice == 'paper':
+                        print('Nobody knows why paper wraps rock, but it does. You lose!')
+                        user_losses += 1
+            if user_choice == 'paper':
+                    if computer_choice == 'rock':
+                        print('Nobody knows why paper wraps rock, but it does. You win!')
+                        user_wins += 1
+                    elif computer_choice == 'scissors':
+                        print('You lose!')
+                        user_losses += 1
+            if user_choice == 'scissors':
+                    if computer_choice == 'paper':
+                        print('You cut and win!')
+                        user_wins += 1
+                    elif computer_choice == 'rock':
+                        print('Your scissors are broken to bits! You lose!')
+                        user_losses += 1
+            if user_choice == computer_choice:
+                print('You tied! Statistically very likely but no less boring!')
+        else:
+            print('Invalid entry!')
 
-if user_choice == 'rock' and computer_choice == 'scissors':
-    print('Your rock smashes feeble scissors and you win!')
-elif user_choice == 'rock' and computer_choice == 'paper':
-    print('Nobody knows why paper wraps rock, but it does. You lose!')
-elif user_choice == 'paper' and computer_choice == 'rock':
-    print('Nobody knows why paper wraps rock, but it does. You win!')
-elif user_choice == 'paper' and computer_choice == 'scissors':
-    print('You lose!')
-elif user_choice == 'scissors' and computer_choice == 'paper':
-    print('You cut and win!')
-elif user_choice == 'scissors' and computer_choice == 'rock':
-    print('Your scissors are broken to bits! You lose!')
-elif user_choice == computer_choice:
-    print('You tied! Statistically very likely but no less boring!')
-else:
-    print('Invalid entry!')
+        current_round += 1
 
+    print(f'TOTALS: wins: {user_wins} losses: {user_losses}.') #  Win percentage: {user_wins/user_losses}')
+
+game(4)
 
 # It's kinda ugly. Other than the for loop (i think) that lets them play again (and could have a counter to keep score), how can I clean this up?
 # Keegan Good:pdxcodeguild:  4:56 PM

@@ -11,8 +11,13 @@ def replaceElements(arr: list[int]) -> list[int]:
             counter += 1
     
     for i in range(-1, -(len(arr)+1), -1):
-        print(i)
-        print(arr[i])
+        # loop through the array backwards
+        # do an IF items from i to end of array are greater than arr[i]:
+            # .append() to new_array
+            # return new_array
+            # else: 
+                # return -1
+        print(f'arr[{i}]: {arr[i]} ')
 
 arr = [17, 18, 5, 4, 6, 1] # len = 6
 replaceElements(arr)
