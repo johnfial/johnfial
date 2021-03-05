@@ -1,8 +1,20 @@
 def replaceElements(arr: list[int]) -> list[int]:
-    print(f'new arr is {arr}')
+    print(f'new arr is {arr} with len(arr) {len(arr)}')
     
+    counter = 0
+    output_array = []
 
-arr = [17, 18, 5, 4, 6, 1]
+    for num in arr:
+        while counter < len(arr):
+            # print(arr[counter])
+            
+            counter += 1
+    
+    for i in range(-1, -(len(arr)+1), -1):
+        print(i)
+        print(arr[i])
+
+arr = [17, 18, 5, 4, 6, 1] # len = 6
 replaceElements(arr)
 
 arr_2 = [400]
@@ -16,10 +28,7 @@ arr_2 = [400]
 
 # After doing so, return the array.
 
- 
-
-# Example 1:
-
+    # Example 1:
 # Input: arr = [17,18,5,4,6,1]
 # Output: [18,6,6,6,1,-1]
 # Explanation: 
@@ -30,20 +39,16 @@ arr_2 = [400]
 # - index 4 --> the greatest element to the right of index 4 is index 5 (1).
 # - index 5 --> there are no elements to the right of index 5, so we put -1.
 
-# Example 2:
-
+    # Example 2:
 # Input: arr = [400]
 # Output: [-1]
 # Explanation: There are no elements to the right of index 0.
 
- 
-
-# Constraints:
-
+    # Constraints:
 #     1 <= arr.length <= 104
 #     1 <= arr[i] <= 105
 
-#    Hide Hint #1  
+    #    Hide Hint #1  
 # Loop through the array starting from the end.
-#    Hide Hint #2  
+    #    Hide Hint #2  
 # Keep the maximum value seen so far.
