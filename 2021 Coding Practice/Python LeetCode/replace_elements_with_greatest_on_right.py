@@ -10,8 +10,7 @@ def replaceElements(arr: list[int]) -> list[int]:
             
             counter += 1
     
-    for i in range(-1, -(len(arr)+1), -1):
-        # loop through the array backwards
+    for i in range(-1, -(len(arr)+1), -1):  # loop through the array backwards
         # do an IF items from i to end of array are greater than arr[i]:
             # .append() to new_array
             # return new_array
@@ -19,10 +18,15 @@ def replaceElements(arr: list[int]) -> list[int]:
                 # return -1
         print(f'arr[{i}]: {arr[i]} ')
 
+    # this might be 'edge case cheating' ...
+    if len(arr) < 2:
+        return -1
+
 arr = [17, 18, 5, 4, 6, 1] # len = 6
 replaceElements(arr)
 
 arr_2 = [400]
+# print(replaceElements(arr_2))
 # replaceElements(arr_2) # should return -1
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
