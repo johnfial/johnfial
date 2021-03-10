@@ -4,22 +4,34 @@ def replaceElements(arr: list[int]) -> list[int]:
     counter = 0
     output_array = []
 
+
+    # I'd want to pop the first one off, then see if anything in there is greater than the first one (else -1), and if so, add THAT number to index of the NEW list... then at the end, return that list!
+
+    highest_number = 0 # hmm...
+
     for num in arr:
         while counter < len(arr):
             # print(arr[counter])
             
-            counter += 1
+            # counter += 1
+            testpop = arr.pop(counter)
+            # print(testpop)
+            for number in arr:
+                if number > testpop:
+                    print(f'{number} is higher than {testpop}!')
+        print(f'arr {arr} and output_array {output_array}')
     
-    for i in range(-1, -(len(arr)+1), -1):  # loop through the array backwards
-        # do an IF items from i to end of array are greater than arr[i]:
-            # .append() to new_array
-            # return new_array
-            # else: 
-                # return -1
-        print(f'arr[{i}]: {arr[i]} ')
-
-    # this might be 'edge case cheating' ...
-    if len(arr) < 2:
+    # # Commented out this try:
+    # for i in range(-1, -(len(arr)+1), -1):  # loop through the array backwards
+    #     # do an IF items from i to end of array are greater than arr[i]:
+    #     # .POP off backwards, no?
+    #         # .append() to new_array
+    #         # return new_array
+    #     print(f'arr[{i}]: {arr[i]} ')
+    #     pass
+    
+    if len(output_array) < 2:  # this might be 'edge case cheating' ...
+        print('return -1!')
         return -1
 
 arr = [17, 18, 5, 4, 6, 1] # len = 6
