@@ -2,12 +2,28 @@
 # https://leetcode.com/explore/learn/card/fun-with-arrays/511/in-place-operations/3575/
 
 def removeElement(nums: list[int], val: int) -> int:
-    print(nums, "         ", val_1)
-    for num in nums:
-        if num == val:
-            nums.pop()
-    print(nums)
+    print(f'~~~START~~~ nums now {nums}, removing all entries of val {val}')
+    # for num in nums:
+    #     if num == val:
+    #         nums.pop()
     
+    counter = 0
+    nums_temp = []
+    
+    for num in nums:
+        print(f'\n ~~~num: {num} ', end="")
+        if num != val: # if it's a legit number:
+            print(f'legit num {num}!')
+            counter += 1
+        else:
+            nums_temp.append(num)
+            nums.remove(num) # Q does this return the value? A no, returns nothing
+    
+    nums.extend(nums_temp) # add the popped numbers to the end
+    
+    print(f'nums now {nums}')
+    return counter
+
 
 
 nums_1 = [3,2,2,3]
@@ -15,8 +31,10 @@ val_1 = 3 # Output: 2, nums = [2,2]
 nums_2 = [0,1,2,2,3,0,4,2]
 val_2 = 2 # Output: 5, nums = [0,1,4,0,3]
 
-removeElement(nums_1, val_1)
+print(removeElement(nums_1, val_1))
+# print(removeElement(nums_2, val_2))
 
+print('~~~finish~~~')
 # Input: nums = [3,2,2,3], val = 3
 # Output: 2, nums = [2,2]
 # Explanation: Your function should return length = 2, with the first two elements of nums being 2.
