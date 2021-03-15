@@ -1,5 +1,8 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # https://leetcode.com/explore/learn/card/fun-with-arrays/511/in-place-operations/3575/
+# NOTE STATUS: No, still
+# Submitted: no...
+
 
 def removeElement(nums: list[int], val: int) -> int:
     print(f'~~~START~~~ nums now {nums}, removing all entries of val {val}')
@@ -11,7 +14,7 @@ def removeElement(nums: list[int], val: int) -> int:
     nums_temp = []
     
     for num in nums:
-        print(f'\n ~~~num: {num} ', end="")
+        print(f'~~~num: {num} ')
         if num != val: # if it's a legit number:
             print(f'legit num {num}!')
             counter += 1
