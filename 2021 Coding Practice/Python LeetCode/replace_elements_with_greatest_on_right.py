@@ -1,3 +1,8 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# https://leetcode.com/explore/learn/card/fun-with-arrays/511/in-place-operations/3259/
+# TODO STATUS:    Working 2021 Mar 18:  WORKING WITH SUB-FUNCTION find_highest_number()...
+# TODO SUBMITTED: No
+
 def replaceElements(arr: list[int]) -> list[int]:
     print(f'new arr is {arr} with len(arr) {len(arr)}')
     arr_len = len(arr) # saved as a variable because the array will change...
@@ -37,7 +42,7 @@ def find_highest_number(input_array, starting_index):
     highest_number_seen = -1
     counter = starting_index
     for num in range(len(input_array)):
-        print(input_array[counter])
+        # print(input_array[counter])
         if num > highest_number_seen:
             highest_number_seen = num
         counter =+ 1

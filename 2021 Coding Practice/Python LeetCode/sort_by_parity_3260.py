@@ -1,7 +1,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # https://leetcode.com/explore/learn/card/fun-with-arrays/511/in-place-operations/3260/
-# NOTE STATUS: Looks good, done I think, could certainly be shorter
-# Submitted: No...
+# TODO STATUS:    Working 2021 Mar 18: Finished, I think... 1 test case works...
+# TODO SUBMITTED: No
 
 def sortArrayByParity(A):
     print(f'~~~started with array: A {A}')
@@ -27,12 +27,8 @@ def sortArrayByParity(A):
     
     return A
 
-
 a_1 = [3, 1, 2, 4] # expected: [2, 4, 3, 1] ... also acceptable: [4,2,3,1], [2,4,1,3], and [4,2,1,3]
 sortArrayByParity(a_1)
-
-
-
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # https://leetcode.com/explore/learn/card/fun-with-arrays/511/in-place-operations/3260/
@@ -50,4 +46,3 @@ sortArrayByParity(a_1)
 
 #     1 <= A.length <= 5000
 #     0 <= A[i] <= 5000
-
