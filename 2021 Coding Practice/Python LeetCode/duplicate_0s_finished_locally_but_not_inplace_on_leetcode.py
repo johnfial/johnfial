@@ -1,5 +1,11 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# https://leetcode.com/explore/learn/card/fun-with-arrays/527/searching-for-items-in-an-array/3250/
+# NOTE STATUS: Working, 19 Mar 2021
+# Submitted: Error with in-place operation...
 
 def duplicateZeroes(arr):
+
+    print(arr)
 
     temp_array = []
     for num in arr:
@@ -10,8 +16,11 @@ def duplicateZeroes(arr):
             else:
                 temp_array.append(num)
     arr = []
-    arr = temp_array
+    arr = temp_array.copy()
+
     print(arr)
+    print(temp_array)
+    
     return temp_array
 
 # Here's a simple while loop with counter:
@@ -28,6 +37,6 @@ def duplicateZeroes(arr):
 
 example_1 = [1,0,2,3,0,4,5,0]   # Explanation: After calling your function, the input array is modified to: [1,0,0,2,3,0,0,4]
 example_2 = [1,2,3] # Explanation: After calling your function, the input array is modified to: [1,2,3]
-print(example_1)
+# print(example_1)
 # duplicateZeroes(example_2)
 duplicateZeroes(example_1)
