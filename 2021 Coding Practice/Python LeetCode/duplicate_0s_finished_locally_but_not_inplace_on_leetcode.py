@@ -23,6 +23,15 @@ def duplicateZeroes(arr):
     
     return temp_array
 
+# 3245  https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/3245/
+
+example_1 = [1,0,2,3,0,4,5,0]   # Explanation: After calling your function, the input array is modified to: [1,0,0,2,3,0,0,4]
+example_2 = [1,2,3] # Explanation: After calling your function, the input array is modified to: [1,2,3]
+# print(example_1)
+# duplicateZeroes(example_2)
+duplicateZeroes(example_1)
+
+
 # Here's a simple while loop with counter:
 # https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/3245/discuss/1077394/Python3-solution
     # i=0
@@ -32,11 +41,3 @@ def duplicateZeroes(arr):
     #         arr.insert(i+1,0) 
     #         i+=1 
     #     i+=1
-
-# 3245  https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/3245/
-
-example_1 = [1,0,2,3,0,4,5,0]   # Explanation: After calling your function, the input array is modified to: [1,0,0,2,3,0,0,4]
-example_2 = [1,2,3] # Explanation: After calling your function, the input array is modified to: [1,2,3]
-# print(example_1)
-# duplicateZeroes(example_2)
-duplicateZeroes(example_1)

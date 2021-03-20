@@ -1,7 +1,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # https://leetcode.com/explore/learn/card/fun-with-arrays/527/searching-for-items-in-an-array/3250/
-# NOTE STATUS: Working, 18 Mar 2021
-# Submitted: No...
+# NOTE STATUS: Working, 19 Mar 2021
+# Submitted: No
 
 def checkIfExist(arr: list[int]) -> bool:
     ''' Given an array arr of integers, checks if there are two integers, N and M,
@@ -14,18 +14,19 @@ def checkIfExist(arr: list[int]) -> bool:
         arr[i] == 2 * arr[j]
         '''
     
+    print(f'~~~START, CHECKING ARRAY: {arr}')
+    
     i = 0
     j = 0
 
     arr_copy = []
+    while i < len(arr):
+        # HINT: # On each step of the loop check if we have seen the element 2 * arr[i] so far,
+        #  or arr[i] / 2 was seen if arr[i] % 2 == 0.
     
-    print(f'~~~START, CHECKING ARRAY: {arr}')
-
-    while i < len(arr) + 1:
-
-        print(f'i = {i}, num[{i}] = {arr[i]}')
-
-        # make if i == j, increment one of them?
+        print(f'i = {i}, arr[{i}] = {arr[i]}')
+        arr_copy.append(arr[i])
+        # print(arr_copy)
 
         if arr[i] * 2 == arr[j]:
             print(f'return: True, double found with arr[i] : {arr[i]} and arr[j] : {arr[j]} ~~~~')
@@ -33,21 +34,20 @@ def checkIfExist(arr: list[int]) -> bool:
 
         i += 1
     
-    print('return: ~~~~~~~~~~~False~~~~~~~~~~~~')
-
+    print('return: False ~~~~~~~~~~~~')  # if it gets to here without a return True , it's False
     return False
 
 
-arr_1 = [10, 2, 5, 3]
-checkIfExist(arr_1)
+arr_1 = [10, 2, 5, 3]  # True
+# checkIfExist(arr_1)
 
-arr_2 = [7, 1, 14, 11]
-# checkIfExist(arr_2)
+arr_2 = [7, 1, 14, 11]  # True
+checkIfExist(arr_2)
 
-arr_3 = [3, 1, 7, 11]
+arr_3 = [3, 1, 7, 11]  # False
 # checkIfExist(arr_3)
 
-arr_4 = [-2,0,10,-19,4,6,-8]
+arr_4 = [-2,0,10,-19,4,6,-8]  # False
 # checkIfExist(arr_4)
 
 arr_5 = [0, 0] # expected TRUE!
@@ -90,8 +90,8 @@ arr_5 = [0, 0] # expected TRUE!
 # Loop from i = 0 to arr.length, maintaining in a hashTable the array elements from [0, i - 1].
 
 #    Hide Hint #2  
-# On each step of the loop check if we have seen the element 2 * arr[i] so far or arr[i] / 2 
-# was seen if arr[i] % 2 == 0.
+# On each step of the loop check if we have seen the element 2 * arr[i] so far,
+#  or arr[i] / 2 was seen if arr[i] % 2 == 0.
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
