@@ -1,3 +1,9 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# by John Fial, 2021, https://github.com/johnfial/
+# https://leetcode.com/problems/find-numbers-with-even-number-of-digits/description/ # 1295
+# TODO STATUS:    Finished
+# TODO SUBMITTED: Yes
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 
 

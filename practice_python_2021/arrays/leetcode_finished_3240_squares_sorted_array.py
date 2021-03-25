@@ -1,3 +1,10 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# by John Fial, 2021, https://github.com/johnfial/
+#  https://leetcode.com/explore/learn/card/fun-with-arrays/521/introduction/3240/
+# TODO STATUS:    Finished
+# TODO SUBMITTED: yes
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
 def sortedSquares(nums: list[int]) ->list[int]:
     squared_list = []
     for num in nums:

@@ -1,4 +1,11 @@
-    # Runtime: 32 ms, Memory Usage: 14.1 MB
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# by John Fial, 2021, https://github.com/johnfial/
+# https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/3253/
+# TODO STATUS:    Working 2021 Mar 25...
+# TODO SUBMITTED: yes,     # Runtime: 32 ms, Memory Usage: 14.1 MB
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+
 def merge(nums1, m, nums2, n): # nums1/2 are the arrays, m and n are the numbers initialized
     c1 = 0 # counter 1 for nums1
     c2 = 0 # counter 2 for nums2
@@ -44,7 +51,7 @@ merge(nums1, 0, nums2, 5) # Expected: [1,2,3,4,5]
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# # https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/3253/
+# https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/3253/
 # Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
 # The number of elements initialized in nums1 and nums2 are m and n respectively. You may assume that nums1 has a size equal to m + n such that it has enough space to hold additional elements from nums2.
 

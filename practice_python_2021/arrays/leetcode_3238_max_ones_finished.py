@@ -1,4 +1,11 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# by John Fial, 2021, https://github.com/johnfial/
 # https://leetcode.com/explore/featured/card/fun-with-arrays/521/introduction/3238/
+# TODO STATUS:    Finished
+# TODO SUBMITTED: Yes
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+
 # Example 1:
 # Explanation: The first two digits or the last three digits are consecutive 1s.
 #     The maximum number of consecutive 1s is 3.
