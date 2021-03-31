@@ -20,57 +20,23 @@ def URLify(input_string, length):
     print(input_string)
     print(length)
 
-    counter = 0  # this is unnecessary but fune
+    counter = 0  # this is unnecessary but fun
     input_string = input_string.replace(' ', '%20')
 
     for character in input_string:
         if character == ' ':
             counter += 1
-            print(f'space found # {counter}')            
+            print(f'space found # {counter}')
+
+            #
+            # if they want only 1 space at a time (normal for a URL), just check if the previous (two counter necessary, or i-1) character was also a space, and if so, skip it...
+            #
 
     print(input_string)
     return input_string
 
-
 example_1 = "Mr. John Smith     "
 URLify(example_1, 13)
-
-
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# Title
-
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-#   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   # 
-#     #     #     #     #     #     #     #     #     #     #     #     #     #     #     #     #
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-#   #   #   #   #   #   #   #   #   # Failed Attempts:  #   #   #   #   #   #   #   #   #   #
-
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
