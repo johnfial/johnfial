@@ -14,10 +14,15 @@
 def isSubscring(source_string, test_string):
     if len(source_string) == len(test_string):
         
+        # for loop... slice at certain point, append to 
+        # check https://www.w3schools.com/python/python_ref_string.asp for how to splice at point, check for permutations of this within a loop...
+        for position in (range(len(source_string))):
+            test = source_string.split('a')
+            print(test)
+
+        
+        # do this        
         print(source_string)
-        
-        
-        # do this
         return
     else:
         print('lengths do not match. return False')
