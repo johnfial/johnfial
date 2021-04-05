@@ -4,3 +4,5 @@ secrets.*
 secrets.py
 *secrets*
 ~secrets.py
+*secrets.md
+~secrets.md
