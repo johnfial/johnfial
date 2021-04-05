@@ -19,6 +19,3 @@
 - Planning-to-do/note apps you use, like Evernote, To-Doist -- what do you us? Anything you love and swear by, or just use what you find acceptable?
 - What's the most actual coding you could do in a day, **consistently**? 2 hours? 6 hours?
 - Any othere main productivity tricks you want to add?
-
-
-'''

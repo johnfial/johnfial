@@ -3,6 +3,9 @@
 secrets.*
 secrets.py
 *secrets*
+*secrets*.*
 ~secrets.py
 *secrets.md
 ~secrets.md
+~secrects copy.md
+*secrets*.md
