@@ -1,7 +1,8 @@
 def clock_angle_converter(input_time):
     '''
-    Takes in min/hour and calculates the angle between them
-    090 = 270
+    Takes in min/hour and calculates the angle between them. 
+    For now, assume that 090 = 270 is OK (it's the difference that matters, both of those are right angles).
+    Also assume that the correct answer as > 360 or < 0 is also OK (for now!).
     '''
 
     hours = int(input_time[0:2])
@@ -23,6 +24,7 @@ def clock_angle_converter(input_time):
     print(f'{hours}, {minutes}, {hours_degrees}, {minutes_degrees}')
 
     difference = hours_degrees - minutes_degrees
+    
     # EXTRA
     # If negative, convert back (add 360), if > 360, minus 360
 

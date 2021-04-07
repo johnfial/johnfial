@@ -61,20 +61,6 @@ class ATM():
             print(f'Sorry! Current balance is ${self.balance}; but you tried to withdraw ${amount}.')
             return self.balance
 
-account1 = ATM(505)
-
-# TESTING:
-# account1.deposit(2)
-# account1.deposit(-100)
-# account1.deposit(2)
-# # account1.print_transactions()
-# # print(account1.check_withdrawl(-555))
-# account1.withdraw(55)
-# account1.withdraw(-55)
-# account1.print_transactions()
-# print(account1.balance) # NOTE this is where __str__ comes in useful or necessary
-
-
 def next_operation():
     user_input = input(f'Enter next operation: ')    # user_input = 'create' # TEMP INPUT ### REMEMBER that invalid input here WILL LOOP, which is correct functionality!
     return user_input
@@ -94,30 +80,29 @@ def main(account):
             amount = input(f'Please enter the amount, as a number: ')
             try: 
                 amount = float(amount)
+                account.deposit(amount)
+                user_input = next_operation()
             except ValueError:
                 print('Invalid number. Please enter a valid number next time.')
                 user_input = next_operation()
-                # NOTE this is still breaking...not here, but on the NEXT user operation!
-
-            account.deposit(amount)
-            user_input = next_operation()
+            # NOTE excellent lesson learned, as I originally had the .deposit and the next_opertation in the elif but OUTSIDE the try/except. 
+            # NOTE Any error within the try statement will 'break' and jump to the except portion!
 
         elif user_input == 'withdraw':
             amount = input(f'Please enter the amount, as a number: ')
             try: 
                 amount = float(amount)
+                account.withdraw(amount)
+                user_input = next_operation()
             except ValueError:
                 print('Invalid number. Please enter a valid number next time.')
                 user_input = next_operation()
-
-            account.withdraw(amount)
-            user_input = next_operation()
 
         elif user_input == 'history':
             account.print_transactions()
             user_input = next_operation()
 
-        elif user_input == 'menu':
+        elif user_input == 'menu' or user_input == 'help':
             print(f'Acceptable operations are, without quotes: \"check balance\", \"deposit\", \"withdraw\", \"history\", \"menu\", or \"exit\": ')
             user_input = next_operation()
 
@@ -129,17 +114,30 @@ def main(account):
     else: # if user_input is 'exit'...
         return 
 
+account1 = ATM(505)
+
+##############################################################################
+
+    # TESTING:
+# account1.deposit(2)
+# account1.deposit(-100)
+# account1.deposit(2)
+# # account1.print_transactions()
+# # print(account1.check_withdrawl(-555))
+# account1.withdraw(55)
+# account1.withdraw(-55)
+# account1.print_transactions()
+# print(account1.balance) # NOTE this is where __str__ comes in useful or necessary
+
 
 main(account1)
 
+# TODO now can I make it use different accounts? Maybe with a username and password?
 
 
 
+##############################################################################
 
-
-# add call function for REPL under each if statement... # should NOT have to do this if you call it one time before!
-
-# NOTE FIX # TypeError: '>' not supported between instances of 'int' and 'str'
 print('     ~~~  PROGRAM ENDED  ~~~       ')
 ##############################################################################
 # https://github.com/PdxCodeGuild/class_orca/blob/main/1%20Python/labs/lab25-ATM.md
