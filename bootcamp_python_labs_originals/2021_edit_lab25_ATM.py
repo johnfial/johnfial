@@ -114,7 +114,6 @@ def main(account):
     else: # if user_input is 'exit'...
         return 
 
-account1 = ATM(505)
 
 ##############################################################################
 
@@ -130,7 +129,10 @@ account1 = ATM(505)
 # print(account1.balance) # NOTE this is where __str__ comes in useful or necessary
 
 
-main(account1)
+account1 = ATM(250)
+account2 = ATM(5000)
+# main(account1)
+
 
 # TODO now can I make it use different accounts? Maybe with a username and password?
 
