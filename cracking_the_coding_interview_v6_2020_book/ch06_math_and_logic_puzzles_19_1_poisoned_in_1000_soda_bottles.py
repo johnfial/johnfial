@@ -23,28 +23,45 @@
     # ~50% go to bonus round 4!:
         # Day 29 test both suspect sodas on two of the 7 remaining strips
         # Day 36 poisoned soda found!
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-# variables BS:
-sodas_suspect = 1000
-sodas_negative = 0
-sodas_positive = 0
-test_strips_negative = 0
-
-sodas_dictionary = {}
-
-sodas_suspect = 10  # TESTING ONLY: overwrite the other to use a smaller number
-
-for i in range(10):
-    sodas_dictionary[i] = False
-# make the one True item...
 import random
-positive_soda = random.randint(1, 1000)
-positive_soda = 5
+
+# # # # 
+
+# variables
+current_day = 0
+test_strips_negative = 10
+test_strips_positive = 0
+sodas_dictionary = {
+    # soda_bottle_number : False 
+}
+max_sodas = 100  # lower this for testing
+
+# # # # 
+
+# Create the sodas dictionary AND the one poisoned soda
+for i in range(1, max_sodas+1):
+    sodas_dictionary[i] = False
+positive_soda = random.randint(1, max_sodas)  # make the one 'True', poisoned soda
 sodas_dictionary[positive_soda] = True
 
+# # # # 
+
+# print(sodas_dictionary)
+
+group_count = int(max_sodas / test_strips_negative)
+print(group_count)
+# TODO deal with remainder when the strips goes down...
+# TODO will probably need a function that repeats each round...
 
 
-print(sodas_dictionary)
+
+
+
+
+
+
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # by John Fial, 2021, https://github.com/johnfial/
