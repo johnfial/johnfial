@@ -41,7 +41,7 @@ def find_prime_numbers_through(ceiling):
     print(f'You found a total of {len(primes_found)} prime numbers between 1-{ceiling}: {primes_found}.')
 
 # check_is_prime(24)
-find_prime_numbers_through(3000)
+find_prime_numbers_through(70)
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
