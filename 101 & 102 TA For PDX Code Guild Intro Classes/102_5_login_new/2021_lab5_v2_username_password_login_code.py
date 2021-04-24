@@ -1,8 +1,10 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # by John Fial, 2021, https://github.com/johnfial/
 # https:// web address
-# TODO STATUS:    Working 2021 Mar 25...
-# TODO SUBMITTED: No
+
+# TODO STATUS:    v5.4 with multiple users
+# TODO 5.5...
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # This is a simple username/password login code.
 # old: https://github.com/PdxCodeGuild/Programming102/blob/master/labs/user_login.md
@@ -14,14 +16,24 @@
 
 
 # make user_profiles dictionary, base username:password
-user_profiles = {
-    'username':'john',
-    'password':'apples',
-}
+profiles_list = [
+    {
+        'username':'john',
+        'password':'apples',
+    },
+    {
+        'username':'jason',
+        'password':'banana1',
+    },
+    {
+        'username':'craig',
+        'password':'gymnasium123',
+    }
+]
 
 # make login function (main) function return true if match any keypair, otherwise false and error
-def login(input_username,input_password):
-    actual_password = user_profiles.get('password')
+def login(input_username,input_password, input_profile):
+    actual_password = input_profile.get('password')
 
     if input_password == actual_password:
         return True
@@ -29,48 +41,37 @@ def login(input_username,input_password):
         return False
         
 def main():    
-    welcome = 'Welcome to Website Login v1.2. Please do not hack.'
+    welcome = 'Welcome to Website Login v1.3. Please do not hack.'
     print(welcome)
-            
-    input_username = input('Please enter your username: ')
-    # input_username = 'john' # FOR TESTING
-
-    input_password = input('Please enter your password: ')
-    # input_password = 'appleaoeus' # FOR TESTING
     
-    attempted_logins_counter = 1
-    while attempted_logins_counter < 3:
-        if login(input_username,input_password) == True: 
-            print(f'Login Successful! Welcome, {input_username}!')
-            break
+    failed_logins = 0
+    while failed_logins < 3:
 
-        else:
-            attempted_logins_counter += 1
-            print('Login Failed! Do not hack!')            
+        # input_username = input('Please enter your username: ')
+        input_username = 'john' # FOR TESTING
+        # input_password = input('Please enter your password: ')
+        input_password = 'apploes' # FOR TESTING
 
-            #retry... do i really need to code this like this exactly?
-            input_username = input('Please try your username again: ')
-            input_password = input('Please try your password again: ')
-
-            #do I really need to run this again like this?
-            if login(input_username,input_password) == True: 
+        for profile in profiles_list:
+            if login(input_username,input_password, profile) == True: 
                 print(f'Login Successful! Welcome, {input_username}!')
-                break
+                return
 
-        if attempted_logins_counter == 3:
-                print('Too many attempted login attempts. Try again in 24 hours, or contact your system administrator!')
+        failed_logins += 1
+        print('Login Failed! Do not hack!')
+        # input_username = input('Please try your username again: ')
+        # input_password = input('Please try your password again: ')
+
+            # #do I really need to run this again like this?
+            # if login(input_username,input_password) == True: 
+            #     print(f'Login Successful! Welcome, {input_username}!')
+            #     break
+
+    if failed_logins == 3:
+        print('Too many attempted login attempts. Try again in 24 hours, or contact your system administrator!')
 
 main()
 
-# print('end code #######################') #REMOVE helps me know if the code got to the end or finished elsewhere...
-
-# 5.4
-# Add support for multiple users.
-# A few things will need to change:
-
-#     Instead of one profile, you will need a list of profiles. Each profile will be a dictionary containing key : value pairs with the keys of username and password.
-#     When the user enters their username and password attempts, loop through the list of profiles, pass each profile one at time into the login() function along with the username_attempt and password_attempt.
-#     If the username_attempt and password_attempt match the values at the keys of username and password current profile, the login() function will return that True and that user will be logged in. Otherwise, it will return False.
 
 # 5.5 - Extra Challenge
 #     Define a function called create_user() which:
@@ -185,6 +186,13 @@ main()
 
 # Your login has been unsuccessful three times! Try again later. Goodbye!
 
+# 5.4
+# Add support for multiple users.
+# A few things will need to change:
+
+#     Instead of one profile, you will need a list of profiles. Each profile will be a dictionary containing key : value pairs with the keys of username and password.
+#     When the user enters their username and password attempts, loop through the list of profiles, pass each profile one at time into the login() function along with the username_attempt and password_attempt.
+#     If the username_attempt and password_attempt match the values at the keys of username and password current profile, the login() function will return that True and that user will be logged in. Otherwise, it will return False.
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
