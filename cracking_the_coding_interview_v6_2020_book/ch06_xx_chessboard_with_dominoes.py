@@ -7,33 +7,14 @@
 # TODO STATUS:    23 April 2021 started
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# 06.7 The Apocalypse (brief type)
-# The world queen is concerned about the birth rate, and wants all families to keep birthing until they have one baby girl.
-# Assume the odds of M/F is 50%. Assume they immedately stop with a girl. No twins or anything like that.
+# 06.
 
-# What will the gender ratio of the new generation be?
-
-# Hints: 154, 160, 171, 188, 201
+# Hints: 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-# First let's print out the % of 50% halving...
-
-# Whiteboarded this, very fun!
-
-def main(input_generations):
-    
-    percentage = 100
-    sum = 0
-
-    for x in range(1,input_generations+1):
-        new_generation = (percentage / 2)
-        percentage = percentage - new_generation
-        sum += new_generation
-        print(f'{percentage} and {new_generation} and sum {sum}')
-
-main(7)
-
+# 64 spaces... 4 total covered by the diagonal slicing, so 60
+# 31 dominoes can cover 62 spaces...
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # by John Fial, 2021, https://github.com/johnfial/

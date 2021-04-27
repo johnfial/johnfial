@@ -7,33 +7,24 @@
 # TODO STATUS:    23 April 2021 started
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# 06.7 The Apocalypse (brief type)
-# The world queen is concerned about the birth rate, and wants all families to keep birthing until they have one baby girl.
-# Assume the odds of M/F is 50%. Assume they immedately stop with a girl. No twins or anything like that.
+# 06.4 Ants on a Triangle
 
-# What will the gender ratio of the new generation be?
+# Ants, ants, marching up and down again...
 
-# Hints: 154, 160, 171, 188, 201
+# Hints: 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-# First let's print out the % of 50% halving...
 
-# Whiteboarded this, very fun!
+def ant_polygon_probability(n):
+    # Possibility of no collisions: 2 out of 2*n
+    # Collisions: (1 - ( 2 * n ))
 
-def main(input_generations):
-    
-    percentage = 100
-    sum = 0
+    print(f'possibilites for NO collisions 2 / (2*n): {2 / (2*n)}')
+    print(f'possibilites of collisions: 1 - (2*n) : {1 - ((2*n))} ')
+    print(f'possibilites: 2*n or : {2*n}.')
 
-    for x in range(1,input_generations+1):
-        new_generation = (percentage / 2)
-        percentage = percentage - new_generation
-        sum += new_generation
-        print(f'{percentage} and {new_generation} and sum {sum}')
-
-main(7)
-
+ant_polygon_probability(3)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # by John Fial, 2021, https://github.com/johnfial/
