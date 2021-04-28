@@ -21,18 +21,36 @@
 
 # Whiteboarded this, very fun!
 
-def main(input_generations):
-    
-    percentage = 100
-    sum = 0
+def main(input_generations, parents):
+
+    generation_number = 0
+    initial_births = parents / 2  # 1000 in my example, also 1000 maximum (ideal) girls
+    new_births = initial_births
+    total_girls = 0
+    total_boys = 0
+
+    birth_rate = 0.5
+
+
 
     for x in range(1,input_generations+1):
-        new_generation = (percentage / 2)
-        percentage = percentage - new_generation
-        sum += new_generation
-        print(f'{percentage} and {new_generation} and sum {sum}')
+        
+        generation_number += 1
+        
+        new_girls = new_births * birth_rate
+        total_girls += new_girls
 
-main(7)
+        new_boys = new_births * birth_rate
+        total_boys += new_boys
+
+        gender_ratio = total_boys / total_girls
+        
+        print(f'SUMMARY: Generation {generation_number}, new_girls: {new_girls}, .new_boys: {new_boys}, total_girls: {total_girls}, total_boys: {total_boys}, gender_ratio: {gender_ratio}.')
+        # print(f'{percentage*100}% of babies born were girls, so {new_births} new_births * {percentage * 100}% = {new_births * percentage} girls and {new_births * percentage} boys.')
+
+        new_births = 
+
+main(2, 2000)
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 

@@ -18,11 +18,15 @@
 
 def ant_polygon_probability(n):
     # Possibility of no collisions: 2 out of 2*n
-    # Collisions: (1 - ( 2 * n ))
+    # Collisions: (1 - ( 2 / (2*n) ))
 
-    print(f'possibilites for NO collisions 2 / (2*n): {2 / (2*n)}')
-    print(f'possibilites of collisions: 1 - (2*n) : {1 - ((2*n))} ')
     print(f'possibilites: 2*n or : {2*n}.')
+
+    no_collisions = 2 / (2*n)
+    print(f'possibilites for NO collisions 2 / (2*n): {no_collisions}')
+
+    collisions = 1 - (no_collisions)
+    print(f'possibilites of collisions: 1 - (2 / (2*n)) : {collisions} ')
 
 ant_polygon_probability(3)
 
