@@ -10,8 +10,8 @@ def main():
 
     SIGNED: //PDXCODEGUILD101
     '''
-    
-    while True:
+    while user_input != 'break':
+        user_input = input('Please enter "done" to exit, anything else to continue...   ')
 
         # randomized following for more fun
         fluid = input('Input a healing fluid: ')
@@ -38,15 +38,14 @@ def main():
 
         #prints the full string/message
         print(madlib)
-
-        break
     pass
 
 main()
 
 # Extra Challenge 1
 
-#     Make a solution that utilizes lists. For example, ask the user for three adjectives, separated by commas, then use the .split() string method to create a list containing each adjective
+#     Make a solution that utilizes lists. For example, ask the user for three adjectives, separated by commas, 
+# then use the .split() string method to create a list containing each adjective
 
 # Extra Challenge 2
 

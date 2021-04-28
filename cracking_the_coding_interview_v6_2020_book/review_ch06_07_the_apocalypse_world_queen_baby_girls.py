@@ -18,8 +18,11 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 # First let's print out the % of 50% halving...
-
 # Whiteboarded this, very fun!
+# After seeing the output return the same ratio for an hour or two, I kept adjusting it, thinking I was doing it wrong.
+# I was tired and thought, being wrong, I should return -- but had this nagging feeling, as written in the solution (before I read it),
+# that "biology hasn't changed", and therefore there's still always a 50/50 boy/girl chance... good to confirm my instincts. Now review the solution!
+
 
 def main(input_generations, parents):
 
@@ -29,7 +32,7 @@ def main(input_generations, parents):
     total_girls = 0
     total_boys = 0
 
-    birth_rate = 0.5
+    birth_rate = 0.5    
 
 
 
@@ -48,9 +51,9 @@ def main(input_generations, parents):
         print(f'SUMMARY: Generation {generation_number}, new_girls: {new_girls}, .new_boys: {new_boys}, total_girls: {total_girls}, total_boys: {total_boys}, gender_ratio: {gender_ratio}.')
         # print(f'{percentage*100}% of babies born were girls, so {new_births} new_births * {percentage * 100}% = {new_births * percentage} girls and {new_births * percentage} boys.')
 
-        new_births = 
+        new_births = new_births * birth_rate
 
-main(2, 2000)
+main(5, 2000)
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 

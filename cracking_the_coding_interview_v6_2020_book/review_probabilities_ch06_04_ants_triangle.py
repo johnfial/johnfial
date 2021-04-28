@@ -8,10 +8,15 @@
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 06.4 Ants on a Triangle
+# There are three ants on different vertices of a triangle. What is the probability of collision (between any two or all of them)
+# if they start walking on the sides of the triangle? Assume that each ant randomly picks a direction, with either direction being 
+# equally likely to be chosen, and that they walk at the same speed. 
+
+# EXTRA: What's the probability of collision with n ants of an n-vertex polygon?
 
 # Ants, ants, marching up and down again...
 
-# Hints: 
+# Hints: 157, 195, 296
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
@@ -20,13 +25,14 @@ def ant_polygon_probability(n):
     # Possibility of no collisions: 2 out of 2*n
     # Collisions: (1 - ( 2 / (2*n) ))
 
-    print(f'possibilites: 2*n or : {2*n}.')
+    print(f'Total possibilites for n={n} vertices: 2*n = {2**n}.')
 
-    no_collisions = 2 / (2*n)
+    no_collisions = 2 / (2**n)
     print(f'possibilites for NO collisions 2 / (2*n): {no_collisions}')
 
     collisions = 1 - (no_collisions)
     print(f'possibilites of collisions: 1 - (2 / (2*n)) : {collisions} ')
+    print(2/6)
 
 ant_polygon_probability(3)
 
