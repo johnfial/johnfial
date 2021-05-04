@@ -40,14 +40,14 @@ def find_prime_numbers_through(ceiling):
     for number in range(1, ceiling):
         if check_is_prime(number) == True:
             primes_found.append(number)
-    print(f'You found a total of {len(primes_found)} prime numbers between 1-{ceiling}: {primes_found}.')
+    print(f'You found a total of {len(primes_found)} prime numbers between 1-{ceiling}:') # {primes_found}.')
     return primes_found
 
 # check_is_prime(24)
-find_prime_numbers_through(100000)
-    # 1,000 = 1s 
-    # 10,000 = 1s seconds... 
-    # 100,000 = 38 seconds!
+find_prime_numbers_through(1000000)
+    # 1,000     = < 1 second 
+    # 10,000    = ~ 1-2 seconds... 
+    # 100,000   = 38 seconds!
     # 1,000,000 = be careful... 38s * 10 / 60s = 6.3 minutes, but 1s became 38s, so it might not purely be 10x the processing time... especially the way I wrote it!
 
 
