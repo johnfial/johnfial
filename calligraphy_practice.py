@@ -13,13 +13,13 @@ print(letters_upper)
 def print_words(max=5):
         
     for i in range(max):
-        integer = random.randint(0, 26)
+        integer = random.randint(0, 25)
         
-        print((english_list[integer].upper() + ' ') * max)
-        print(letters_upper[integer] * 5)
+        print((english_list[integer].upper() + ' ') * 6)
+        print(letters_upper[integer] * 20)
 
 
-print_words(3)
+print_words(4)
 
 # print(len(english_words_set)) # 25,000 words!
 

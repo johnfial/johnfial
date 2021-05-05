@@ -3,6 +3,13 @@
 # STATUS: 2.1 and 2.2 done, 2.3 REPL is ok but some bugs and could be prettier
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
+# 2.1
+# Create a function called sum_numbers which will take in a single parameter, numbers, which will be passed a list of numbers as an argument when the function is called.
+# The function will return the sum of all the numbers in the list.
+# Numbers: [4, 5, 4, 2, 7, 4, 4, 5, 8, 10]
+# Sum: 53
+
+
 def sum_numbers(input_list):
     sum_total = 0
     for num in input_list:
@@ -12,7 +19,7 @@ def sum_numbers(input_list):
 
 example_1 = [4, 5, 4, 2, 7, 4, 4, 5, 8, 10]  # sum 51
 example_2 = [5, 10, 5, 15, 25, 35 ]
-print(sum_numbers(example_1))
+print(sum_numbers(example_2))
 
 # # # # 2.1 took ~2-3 minutes (including file setup)
 
