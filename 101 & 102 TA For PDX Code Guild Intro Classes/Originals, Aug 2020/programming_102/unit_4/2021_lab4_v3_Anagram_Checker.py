@@ -15,7 +15,7 @@ def string_modifier(phrase):
     for character in string.punctuation:
         if character in phrase:
             phrase.pop(character)
-# BUG here
+# BUG here, this isn't proper syntax, pop takes in an index, not list entry...
     return phrase
 
 def main():

@@ -1,8 +1,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # by John Fial, 2021, https://github.com/johnfial/
-# https:// web address
 
-# TODO STATUS:    v5.4 with multiple users
+# TODO STATUS:    v5.4 with multiple users ...
 # TODO 5.5...
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -10,7 +9,6 @@
 # old: https://github.com/PdxCodeGuild/Programming102/blob/master/labs/user_login.md
 # new: https://github.com/PdxCodeGuild/Programming102/blob/master/labs/lab5.md
 # new early 2021: adding 5.4 and 5.5 , multiple users and user_exists_check()... 
-# see bottom
 # ##################
 
 
@@ -31,7 +29,25 @@ profiles_list = [
     }
 ]
 
-# make login function (main) function return true if match any keypair, otherwise false and error
+def user_exists(input_username):
+    '''
+    Checks if input_username (string) is in the list of profile dictionaries ...
+    '''
+    for profile in profiles_list:
+        if profile['username'] == input_username:
+            return True
+
+    # else:
+    return False
+
+def create_new_user(new_username, new_password):
+    temp_dict = {}
+    temp_dict['username'] = new_username
+    temp_dict['password'] = new_password
+    
+    profiles_list.append(temp_dict)
+    return
+
 def login(input_username,input_password, input_profile):
     actual_password = input_profile.get('password')
 
@@ -41,7 +57,7 @@ def login(input_username,input_password, input_profile):
         return False
         
 def main():    
-    welcome = 'Welcome to Website Login v1.3. Please do not hack.'
+    welcome = 'Welcome to Website Login v2.1. Please do not hack.'
     print(welcome)
     
     failed_logins = 0
@@ -49,23 +65,26 @@ def main():
 
         # input_username = input('Please enter your username: ')
         input_username = 'john' # FOR TESTING
-        # input_password = input('Please enter your password: ')
-        input_password = 'apploes' # FOR TESTING
-
-        for profile in profiles_list:
-            if login(input_username,input_password, profile) == True: 
-                print(f'Login Successful! Welcome, {input_username}!')
-                return
+        
+        # test user_exists here
+        if user_exists(input_username) == True:
+            # input_password = input('User record found! Please enter your password: ')
+            input_password = 'apploes' # FOR TESTING
+            for profile in profiles_list:
+                if login(input_username,input_password, profile) == True: 
+                    print(f'Login Successful! Welcome, {input_username}!')
+                    return
+        else:
+            create_new = input('No user found! Would you like to create a new user? y/n > ')
+            if create_new == 'y':
+                # new_username = input('Please enter the new username: ')
+                new_username = 'test234' # FOR TESTING
+                # new_password = input(f'Please enter the new password for username "{new_username}" : ')
+                new_password = 'aoeu1234' # FOR TESTING
+                create_new_user(new_username, new_password)
 
         failed_logins += 1
         print('Login Failed! Do not hack!')
-        # input_username = input('Please try your username again: ')
-        # input_password = input('Please try your password again: ')
-
-            # #do I really need to run this again like this?
-            # if login(input_username,input_password) == True: 
-            #     print(f'Login Successful! Welcome, {input_username}!')
-            #     break
 
     if failed_logins == 3:
         print('Too many attempted login attempts. Try again in 24 hours, or contact your system administrator!')
@@ -73,20 +92,16 @@ def main():
 main()
 
 
+
+
 # 5.5 - Extra Challenge
 #     Define a function called create_user() which:
 #         prompts the user for a username and password.
 #         checks to see if the username already exists in the profiles list using the user_exists() function
 #         If the username is unique and doesn't appear in the profiles list, .append() it to the profiles list.
-#     Define a function called user_exists() which will:
-#         loop through each profile in the profiles list
-#         check to see if the username the user entered already exists within one of the profile dictionaries.
-#     If a user with that username already exists, return True, otherwise return False
 #     Integrate the create_user() function into your REPL to allow the user to create a new username.
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-
-
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 # Profiles list:
@@ -194,6 +209,17 @@ main()
 #     When the user enters their username and password attempts, loop through the list of profiles, pass each profile one at time into the login() function along with the username_attempt and password_attempt.
 #     If the username_attempt and password_attempt match the values at the keys of username and password current profile, the login() function will return that True and that user will be logged in. Otherwise, it will return False.
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# 5.5 - Extra Challenge
+#     Define a function called create_user() which:
+#         prompts the user for a username and password.
+#         checks to see if the username already exists in the profiles list using the user_exists() function
+#         If the username is unique and doesn't appear in the profiles list, .append() it to the profiles list.
+#     Define a function called user_exists() which will:
+#         loop through each profile in the profiles list
+#         check to see if the username the user entered already exists within one of the profile dictionaries.
+#     If a user with that username already exists, return True, otherwise return False
+#     Integrate the create_user() function into your REPL to allow the user to create a new username.
 
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
