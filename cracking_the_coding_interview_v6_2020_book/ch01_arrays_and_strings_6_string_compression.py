@@ -24,12 +24,14 @@ def compress_string(input_string):
     c1 = 0
     c2 = 1
 
+    temp_string = ''
+
     while c1 < len(input_string)-1:
 
         # print(f'{input_string[c1]} + {input_string[c2]}')
 
         temp_counter = 1
-        temp_c2 = c2
+        temp_c2 = c2  # to save c2 before then reset it after this block
         try:  # this is clunky and kind of cheating!
             while input_string[c1] == input_string[c2]:
                 print(f'input_string[c1]=input_string[c2], input_string[{c2}] = {input_string[c2]}')
@@ -47,6 +49,7 @@ def compress_string(input_string):
         c1 += 1
         c2 += 1
 
+    print(temp_string)
     print(input_string)
     return input_string
 
