@@ -64,16 +64,16 @@ def main():
     while failed_logins < 3:
 
         # input_username = input('Please enter your username: ')
-        input_username = 'john' # FOR TESTING
+        input_username = 'test234' # FOR TESTING
         
         # test user_exists here
         if user_exists(input_username) == True:
             # input_password = input('User record found! Please enter your password: ')
-            input_password = 'apploes' # FOR TESTING
+            input_password = 'aoeu1234' # FOR TESTING
             for profile in profiles_list:
                 if login(input_username,input_password, profile) == True: 
                     print(f'Login Successful! Welcome, {input_username}!')
-                    return
+                    return True
         else:
             create_new = input('No user found! Would you like to create a new user? y/n > ')
             if create_new == 'y':
@@ -88,6 +88,7 @@ def main():
 
     if failed_logins == 3:
         print('Too many attempted login attempts. Try again in 24 hours, or contact your system administrator!')
+        return False
 
 main()
 
