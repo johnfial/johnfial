@@ -6,7 +6,6 @@
 
 # TODO STATUS:     Started 21 Apr, have my prime*bottle printing, very close to reverse calculating the heavy pill bottle.
 # TODO Almost done. Fixed my index errors (not all, see BUG), but just need to round the long floats so they're perferctly divisible by 0.1.
-# import math, round?
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 16.1 The Heavy Pill:
@@ -24,6 +23,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 import random
+import math
 
 # variables
 number_bottles = 10 # 20  # lower for testing
@@ -57,11 +57,16 @@ sum_primes = sum(prime_numbers[0:number_bottles])
 # Even with a thousand bottles, this should still work!
 print(f'sum[primes]{sum_primes} - sum {pills_total_weight} # = {sum_primes - pills_total_weight}')
 weight_difference = sum_primes - pills_total_weight
+
 print('~~~')
+
 for x in range(number_bottles):
     print(weight_difference / prime_numbers[x])
-    if weight_difference / prime_numbers[x] == -0.1:
-# WORKING HERE # WORKING HERE # WORKING HERE # WORKING HERE # WORKING HERE 
+    print(round((weight_difference / prime_numbers[x]),3))
+    print('~~~')
+    if round((weight_difference / prime_numbers[x]),1) == -0.100:
+    
+    # NOTE WORKING HERE # WORKING HERE # WORKING HERE # WORKING HERE # WORKING HERE 
         print(f'found it at prime_numbers[{x}] which is {prime_numbers[x]}')
 
 print(f'~~~~program ENDED~~~~~~~~~~')
