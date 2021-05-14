@@ -14,7 +14,8 @@
 # IDEA: Think about a number line?
 # IDEA: 
 
-# HINTS: 466, 543, 600, 627, 641, 663, 691, 711, 723
+# HINTS: 466, 543, 600, 627, 641, 
+# 663, 691, 711, 723
 
 
 def add_without_operators(a, b):
@@ -25,8 +26,14 @@ def add_without_operators(a, b):
 
 a = 5
 b = 5
-add_without_operators(a, b)
+# add_without_operators(a, b)
 
+# 
+# XOR Play
+# https://appdividend.com/2020/06/10/python-xor-operator-example-bitwise-operator-in-python/
+# https://www.delftstack.com/howto/python/xor-in-python/
+for x in range(8):
+    print(1 ^ x)
 
 
 
