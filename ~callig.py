@@ -9,6 +9,9 @@ import random
 from english_words import english_words_set  # from https://pypi.org/project/english-words/
 
 english_list = list(english_words_set)
+# print entire word set: WARNING: 25,000 words!
+# print(len(english_words_set))
+# print(english_words_set)
 
 letters_upper = list(string.ascii_uppercase)  # NOTE THE ORDER OF THE WORDS CHANGES EACH RUN...
 print(letters_upper)
@@ -25,10 +28,6 @@ def print_words(max=5):
     print(f'~~~~~~~~~~~~ ALL DONE! ~~~~~~~~~~~~~~~~~~~')
 
 print_words(5) # change this
-
-# print entire word set: WARNING: 25,000 words!
-# print(len(english_words_set))
-# print(english_words_set)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
