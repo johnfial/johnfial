@@ -1,5 +1,4 @@
-# https://www.w3schools.com/python/python_datetime.asp
-import datetime
+import datetime # https://www.w3schools.com/python/python_datetime.asp
 
 numerical_phrases = {
     0: '0',    1: 'I',    2: 'II',    3: 'III',    4: 'IV',    
@@ -62,19 +61,28 @@ def convert_to_hours_minutes(input_number):
             final_numerical_phrase = f'{hundreds_phrase}{tens_phrase} {ones_phrase}'
             print(f'The number {input_number} is written as "{final_numerical_phrase}."')
 
-# input_number = input('Please enter a single number from 0-999, without decimals or fractions: ')
-input_number = 3055 # for testing
-#convert to a string
-input_number = int(input_number)
+# input_number = int(input('Please enter a single number from 0-999, without decimals or fractions: '))
+input_number = int(3055) # for testing
 
-# convert_to_roman_numeral(input_number)
+convert_to_hours_minutes(input_number)
 print(datetime.datetime.now())
 print(type(datetime.datetime.now()))
 
-def test_funttion():
-    return test_funttion
+print(type(str(datetime.datetime.now())))
 
-print(test_funttion)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ##############################################################################
 # John Fial, PDX Code Guild, 2020-2021
