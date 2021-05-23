@@ -2,9 +2,12 @@
 
 # Array Quadruplet
 
-# Given an unsorted array of integers arr and a number s, write a function findArrayQuadruplet that finds four numbers (quadruplet) in arr that sum up to s. Your function should return an array of these numbers in an ascending order. If such a quadruplet doesn’t exist, return an empty array.
+# Given an unsorted array of integers arr and a number s, write a function findArrayQuadruplet 
+# that finds four numbers (quadruplet) in arr that sum up to s. Your function should return an 
+# array of these numbers in an ascending order. If such a quadruplet doesn’t exist, return an empty array.
 
-# Note that there may be more than one quadruplet in arr whose sum is s. You’re asked to return the first one you encounter (considering the results are sorted).
+# Note that there may be more than one quadruplet in arr whose sum is s. You’re asked to return 
+# the first one you encounter (considering the results are sorted).
 
 # Explain and code the most efficient solution possible, and analyze its time and space complexities.
 
@@ -29,4 +32,26 @@
 #     [input] integer s
 
 #     [output] array.integer
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
+example_1 = [2, 7, 4, 0, 9, 5, 1, 3]
+example_1_n = 20
+
+def findArrayQuadruplet(array, s):
+
+    quad_array = []  # ascending! ... or empty. return the FIRST possibility
+    array.sort()
+    print(array)
+
+    sum = 0
+    for i in range(len(array)-3):
+        # NOTE ok start, but left off here... doesn't have to be consecutive, rather ANY four numbers...
+        if array[i] + array[i+1] + array[i+2] + array[i+3] == s:
+            print(f'found it with i {i}')
+        print(f'i {i}, next loop...')
+
+
+
+    return quad_array
+
+findArrayQuadruplet(example_1, example_1_n)
