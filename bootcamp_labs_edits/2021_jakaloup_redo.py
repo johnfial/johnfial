@@ -1,36 +1,40 @@
-# # https://github.com/PdxCodeGuild/class_salmon/blob/main/1%20Python/labs/jackalope.md
+# NOTE do v2!
 
+def main():
+    population = [0, 0, 10, 10 ]  # target 1000
+    year_current = 0
+    year_end = 5
 
+    while len(population) < 1100:  # many diff ways you could do this, by year for example
+        reproductive_population = 0
+        year_current += 1
+        print(f'~~~~~~~~~~~~~year = {year_current}, start pop: {population}, len(population)= {len(population)}')        
+        
+        # count the reproductive potential... 
+        for individual in population:
+            if 4 <= individual <= 8:
+                reproductive_population += 1
 
-population = [0, 0, ]  # target 1000
-year = 0
+        # ... and add that # babies...
+        for x in range(reproductive_population):
+            population.append(0)
 
-def year_reproduce(population):
+        print(f'killing elderly!')
+        while 10 in population:
+            population.remove(10)
 
-    reproductive_population = 0
-
-    for individual in population:  # count the reproductive potential... 
-        if 4 <= individual <= 8:
-            reproductive_population += 1
-    for i in population: # add one to each age.
-        population[i] += 1
+        print(f'~~~~~~~~~~~~~year = {year_current}, END pop: {population}, len(population)= {len(population)}')      
+        for i in range(len(population)): # add one to each age.
+            population[i] += 1
     
-    # ... and add that # babies...
-    for x in range (reproductive_population):
-        population.append(0)
-
+    print(f'year = {year_current}, len(population)= {len(population)}')
     return population
 
-print(year_reproduce(population))
-
-def die_at_age_10():
-    for individual in population:
-        if individual == 10:
-            population.remove(10)
-    print(population)
-
+main()
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# # https://github.com/PdxCodeGuild/class_salmon/blob/main/1%20Python/labs/jackalope.md
+
 # Mob Programming: Jackalope Simulator
 # Version 1
 
