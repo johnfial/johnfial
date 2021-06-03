@@ -56,17 +56,7 @@ def linear_search(nums, target):
 # and high as the highest.
 
 #     Loop while low is less then high.
-nums = [1, 2, 3, 4, 5, 6, 7, 8]
-def binary_search(nums, target):
-    low = min(nums)
-    high = max(nums)
-    while low < high:
-        # do something
-        # increment low or re-evaluate it
-        low+=1
-        print(low)
-    return
-binary_search(nums, 6)
+
 #         For each iteration, calculate a third index mid which is in the middle between low and high
 #         If the element at mid is the one you're searching for, return it, otherwise check is the 
 # target value is less than or greater than the one at mid. If it's less, make high equal to mid and loop.
@@ -74,6 +64,43 @@ binary_search(nums, 6)
 # return a value indicating that it was not found.
 
 # Example run:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+import math
+# LAB 11 PART 2B BINARY SEARCH:
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, ]
+def binary_search(nums, target):
+    low = min(nums)
+    high = max(nums)
+    
+    mid = nums[(math.floor(len(nums) / 2))-1]
+    print(f'mid={mid}')
+    
+    while low < high:
+        print(f'~~START WITH target {target} in nums=[{nums}], low: {low}, mid: {mid}, high: {high}')
+        # 2 
+        if mid == target:
+            return mid
+        # if target < mid, do this...
+        if target < mid:
+            high = mid
+            print(f'target {target} in nums=[{nums}], low: {low}, mid: {mid}, high: {high}')
+            break
+        # if target > mid, do this...
+        if target > mid:
+            low = mid
+            print(f'target {target} in nums=[{nums}], low: {low}, mid: {mid}, high: {high}')
+            # don't i need to change high?
+            break
+        else:
+            print('WTF why did this line run?!')
+        
+        # NOTE RESET MID, necessary lol...
+        mid = (math.floor(low+high))
+        print(f'mid={mid}')
+        
+    return  # index of target?
+binary_search(nums, 3)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 #  L        M           H
 # [1, 2, 3, 4, 5, 6, 7, 8]

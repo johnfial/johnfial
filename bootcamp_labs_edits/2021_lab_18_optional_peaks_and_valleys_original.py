@@ -54,10 +54,10 @@ def peaks_and_valleys(peaks,valleys):
     return peaks_and_valleys
 
 peaks = check_peaks(data)
-# print(f'peaks are at {peaks}')
+print(f'peaks are at {peaks}')
 valleys = find_valleys(data)
-# print(f'valleys are at {valleys}')
-# print(f'sorted peaks and valleys are at {peaks_and_valleys(peaks,valleys)}')
+print(f'valleys are at {valleys}')
+print(f'sorted peaks and valleys are at {peaks_and_valleys(peaks,valleys)}')
 
 
 
@@ -91,7 +91,7 @@ def print_xs(data_input):
 data = [] # overwrites top of file
 data1 = [3,4,5]
 data2 = [1, 2, 3, 6, 2]
-print_xs(data1)
+# print_xs(data1)
 
 
 # ***************************** WORKING FROM HERE *****************************

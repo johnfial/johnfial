@@ -13,7 +13,7 @@ contacts_lines = contacts_raw.split('\n')
 contacts_list_of_dictionaries = []
 
 def next_operation():
-
+    print(f'Acceptable program inputs are, without quotes: \"create\", \"retrieve\", \"update\", \"delete\", or \"exit\": ')
     user_input = input(f'Enter next operation: ')    # user_input = 'create' # TEMP INPUT ### REMEMBER that invalid input here WILL LOOP, which is correct functionality!
     return user_input
 
@@ -61,7 +61,6 @@ contacts_list_of_dictionaries = input_convert_lines_of_strings_with_headers_to_l
 
 
 ##############################################################################
-# OUTPUT
 # STEP 7 CONVERT EACH DICT ITEM BACK TO A STRING...
 def output_back_headers_and_list_of_dictionaries_to_lines_of_strings(input):
 
@@ -192,8 +191,9 @@ def main(file):
     # TODO STRIP EXTRA CHARACTERS, LOWERCASE, ETC...
 
     user_input = next_operation()
+    exit_list = ['exit', 'quit', 'q', 'cancel',]
 
-    while user_input != 'exit':
+    while user_input not in exit_list:
         if user_input == 'create':  
             ########### NOTE FIX ENTERING COMMAS AND OTHER DANGEROUS CHARACTERS!
             ########### NOTE FIX ENTERING COMMAS AND OTHER DANGEROUS CHARACTERS!
@@ -220,7 +220,7 @@ def main(file):
 
         elif user_input == 'delete':
             lookup_name = input('Please type the exact name of the entry to delete: ')
-            ########### NOTE FIX ENTERING 'NAME' IN DELETE!
+            ########### NOTE FIX ENTERING 'NAME' IN DELETE, BECAUSE THEY CAN DELETE THE HEADER!
             ########### NOTE FIX ENTERING 'NAME' IN DELETE!
             ########### NOTE FIX ENTERING 'NAME' IN DELETE!
             ########### NOTE FIX ENTERING 'NAME' IN DELETE!
