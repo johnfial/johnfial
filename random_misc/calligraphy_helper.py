@@ -14,7 +14,9 @@ english_list = list(english_words_set)
 # print(english_words_set)
 
 letters_upper = list(string.ascii_uppercase)  # NOTE THE ORDER OF THE WORDS CHANGES EACH RUN...
-print(letters_upper)
+# TODO add gui
+# TODO add a word definition lookup... api is easiest way?
+# print(letters_upper)
 
 def print_words(max=5):
         

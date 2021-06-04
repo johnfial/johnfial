@@ -1,12 +1,12 @@
-##############################################################################
-# John Fial, PDX Code Guild, 2020-2021
-##############################################################################
 class Player():
     def __init__(self,token,name='player1'):
         self.token = token
         self.name = name
     def __str__(self):
         return self.token
+    @staticmethod # doesn't require self!
+    def make_human_sound():
+        print('ughhhh')
 class Board():
     def __init__(self, winner=''):
         self.winner = winner                                                                 ##### TODO CHANGE BOARD IN FINAL #####
@@ -15,7 +15,7 @@ class Board():
                         ' ', ' ', ' '   ]
 
     def __repr__(self):
-        return f'{self.board[0]} | {self.board[1]} | {self.board[2]}\n{self.board[3]} | {self.board[4]} | {self.board[5]}\n{self.board[6]} | {self.board[7]} | {self.board[8]}'
+        return f'Current Game Board: \n{self.board[0]} | {self.board[1]} | {self.board[2]}\n{self.board[3]} | {self.board[4]} | {self.board[5]}\n{self.board[6]} | {self.board[7]} | {self.board[8]}'
 
     def move(self, position, player):
         if self.board[position-1] != ' ':
@@ -71,7 +71,7 @@ class Board():
     def is_game_over(self,player):
         if self.calc_winner(player) == player.token:
             return True
-        else:               
+        else:
             if self.is_full() == True:
                 return True
             else:
@@ -145,44 +145,34 @@ def main():
             else:
                 board1 = Board()
 
-main()
-
+# main()
 
 ##############################################################################
 
+# # TEST MOVES
+player1 = Player('X','Johnny!')
+player2 = Player('O','computer42')
+print(player1.make_human_sound())
+board1 = Board()
 
-
-
-
-
-
-
-
-
-
-
-
-# # # TEST MOVES
-# player1 = Player('X','Johnny!')
-# player2 = Player('O','computer42')
-# board1 = Board()
-
-# board1.move(8,player1)
-# board1.move(5,player2)
+board1.move(8,player1)
+board1.move(5,player2)
 # print('Current Game Board:')
-# print(board1.__repr__())
-# board1.move(3,player1)
-# board1.move(2,player2)
-# board1.move(1,player1)
-# board1.move(9,player2)
-# board1.move(4,player1)
-# board1.move(6,player2)
-# board1.move(7,player1) # X WINS
+print(board1.__repr__())
+board1.move(3,player1)
+board1.move(2,player2)
+board1.move(1,player1)
+board1.move(9,player2)
+board1.move(4,player1)
+board1.move(6,player2)
+board1.move(7,player1) # X WINS
 # print('Current Game Board:')
-# print(board1.__repr__())
-# print(board1.is_game_over(player1))
-# print(board1.calc_winner(player1))
-
+print(board1.__repr__())
+print(board1.is_game_over(player1))
+print(board1.calc_winner(player1))
+# TODO review static methods@
+# TODO review __magic__ methods
+# 
 
 # TEST BOARDS
     # test_board_blank = [    ' ', ' ', ' ',
@@ -217,37 +207,3 @@ print('    >> PROGRAM ENDED <<    ')
                                         # self.board = [  [' '],[' '],[' '],
                                         #                 [' '],[' '],[' '],
                                         #                 [' '],[' '],[' ']   ]
-    # coord = [(x,y) for x in range(4) for y in range(4)]
-
-    # HINTS
-    # easiest way...
-    # build classes using EXACT properties (self) and methods he's given us...
-    # two classes, game class has those methods...
-    # then go ahead and build a REPL to let the user play...
-    # REMEMBER THE ATM LAB AND REPEAT THE PROCESS...
-    # Q: HOW TO BEST REPRESENT THE BOARD?
-    # board list, tuples, or dict
-    # list of lists [] x and y value
-    # TUPLES... sometimes do dictionaries, some do dict 
-
-    ##############################################################################
-    # copy of steps:
-
-    # Step 1 WRITE TWO CLASSES. First, Class Player():
-    # 1a two properties: name and token X or O. both in self in init function
-    # Step 2 Second, Class Game():
-    # 2a property self.board = board, start with list of board here # OPTIONS FUTURE are tuple or dictionary
-    # Step 3 Methods in Class Game:
-    # 3a __repr__ function, which prints the board
-    # 3b move(x,y,player) function "Place a player's token character string at a given coordinate (top-left is 0, 0), x is horizontal position, y is vertical position."
-    # 3b take the player's coordinates and input their character string -- NO INPUT YET, that's for the REPL loop... 
-    # 3c calc_winner() function which RUNS EACH TURN to RETURN NONE or which string (X or O) has won
-    # 3d is_full() which returns TRUE if board is full, ENDS GAME
-    # 3e is_game_over() function which returns TRUE if board is full or player has won, i think this runs each time...
-    # Step 4 main() input REPL
-    # Step 10 # NEXT FUTURE make computer player_2, use random to pick a random spot to place its 'O'
-    ##############################################################################
-
-    ##############################################################################
-    # https://github.com/PdxCodeGuild/class_orca/blob/main/1%20Python/labs/lab26-tictactoe.md copy
-    ##############################################################################
