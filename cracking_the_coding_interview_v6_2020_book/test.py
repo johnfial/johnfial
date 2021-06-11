@@ -1,5 +1,10 @@
-print('this')
+list1 = [
+    'banana', 
+    'apple',
+    ]
+print(list1)
 
-output_name = 45
-if 40 < output_name < 50:
-    print("it's between 40 and 50!")
+list2 = list(list1[0])
+list2.sort()
+print(list2)
+print(''.join(list2))
