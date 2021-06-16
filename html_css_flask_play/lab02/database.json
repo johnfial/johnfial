@@ -1,0 +1,14 @@
+{
+    "todos":[
+        {
+            "text": "walk the dog",
+            "priority": "low"
+        },{
+            "text": "feed the cat chocolate",
+            "priority": "medium"
+        },{
+            "text": "create this todo list!",
+            "priority": "high"
+        }
+    ]
+}
