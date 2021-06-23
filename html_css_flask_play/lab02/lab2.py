@@ -2,12 +2,13 @@
 # flask notes @ https://github.com/PdxCodeGuild/class_eagle/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/docs/12%20Flask.md
 
 import json
-from flask import Flask
-app = Flask(__name__)
+# from flask import Flask
+# app = Flask(__name__)
 
 def load_json_data():
-    with open('database.json', 'r') as file:
+    with open('database.json', 'r', errors='ignore') as file:
         data = json.loads(file.read())
+        print(file.read())
     return data
 
 def save_json_data(filename, data):
@@ -15,9 +16,9 @@ def save_json_data(filename, data):
         file.write(json.dumps(data))
     return
 
-@app.route('/')
-def index():
-    return 'Hullo Middle-Earth!'
+# @app.route('/')
+# def index():
+#     return 'Hullo Middle-Earth!'
 
 # app.run(debug=True)
 

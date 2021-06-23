@@ -9,9 +9,9 @@ print(data)
 
 # loads data from db.json, returns a dictionary
 def load_database():
-    with open('database.json', 'r') as file:
-        data = json.loads(file.read())
+    with open('database.json', 'r', encoding='utf-8-sig', errors='ignore') as file:
+        data = json.loads(file.read(), strict=False)
     return data
 
-# load_database()
+load_database()
 print(load_database)
