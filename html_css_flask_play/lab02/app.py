@@ -29,15 +29,17 @@ def index():
         return render_template('index.html', name=name, temperature=temperature, nums=nums)
         #   remember this needs to be in /templates/
 
-# app.run(debug=True)
 database = JsonDB('database.json')
-print(database)
-print(database)
 database.load()
-x = database.get('x', 0)
-x += 1
-database.set('x', x)
-database.save()
-print(database)
-x += 1
-print(database)
+# print(database)
+# x = database.get('x', 0)
+# x += 1
+# database.set('x', x)
+database_dict = database.get('todos')
+print(type(database_dict))
+print(database_dict)
+# print(len(x))
+# database.save()
+# print(database)
+
+# app.run(debug=True)

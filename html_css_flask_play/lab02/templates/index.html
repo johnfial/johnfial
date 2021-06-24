@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}" />
+        <!-- <link rel="stylesheet" type="text/css" href="/templates/main.css" /> -->
+        <title>Flask Forms Play</title>
+    </head>
+    
+<body>
+    <p>Hello {{name}}</p>
+    <br>
+        <h1>
+        {{invalidvariablename}} new var2
+        </h1>
+    <br>
+    {% if temperature < 50 %}
+    <p>cold</p>
+    {% elif temperature < 80 %}
+    <p>warm</p>
+    {% else %}
+    <p>hot</p>
+    {% endif %}
+    
+    <ul>
+      {% for num in nums %}
+      <li>{{num}}</li>
+      {% endfor %}
+    </ul>
+    <!-- example 1 @ https://github.com/PdxCodeGuild/class_salmon/blob/main/2%20Flask%20%2B%20HTML%20%2B%20CSS/docs/13%20Flask%20Forms.md -->
+    <form action="" method="post">
+        <input type="text" name="todo_name" placeholder="Todo!">
+        <label for="todo_name">To-do:</label>
+        <select name="priority" id="priority"></select>
+        <button type="submit">send to the gods!</button>
+    </form>
+    <!-- example 2 @ above -->
+    <!-- <form action="">
+    </form> -->
+
+</body>
+</html>

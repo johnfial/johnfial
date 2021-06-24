@@ -3,12 +3,10 @@ import json
 
 class JsonDB:
     def __init__(self, path='database.json'):
-        print('hello from CLASS INIT!')
         self.path = path
         self.data = None
     
     def __str__(self) -> str:
-        print('hello from the class __str__ function')
         return str(self.data)
     
     def load(self):
