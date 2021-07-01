@@ -9,10 +9,11 @@
 // git push origin branch_name
 // then have to do a pull request WHEN it's final...
 
-// .
-// .
+// JS notes
+// 
 // // 
   
  
-
+console.log('hello!')
+alert('hi!')
 
