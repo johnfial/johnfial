@@ -15,5 +15,9 @@
   
  
 console.log('hello!')
-alert('hi!')
+// alert('hi!')
+
+let element1 = document.querySelector('#testing')
+console.log(element1)
+element1.innerHTML = "<em>aostuhoatnuhuaontd</em>"
 
