@@ -20,7 +20,10 @@
 <body>
     <div id="app_quotes">
         <hr>        
-        <component_search @quotes_search_function="quotes_search_function" v-bind:search_terms="search_terms"></component_search>
+        <component_search 
+            @quotes_search_function="quotes_search_function" 
+            v-bind:search_terms="search_terms"
+            ></component_search>
         <br>
         <hr>
             <button @click="page_backward" v-if="current_page > 1">← Page</button>
