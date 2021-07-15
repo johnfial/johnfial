@@ -62,9 +62,9 @@ https://dev.to/alekswritescode/easiest-way-to-set-up-your-github-profile-page-3g
     src="https://img.shields.io/badge/Twitter-1DA1F2?logo=twitter&logoColor=white&style=for-the-badge"
   />
 </a>
-<a href="https://www.instagram.com/aleks.popovic/">
+<!-- <a href="https://www.instagram.com/aleks.popovic/">
   <img
     alt="Instagram"
     src="https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=white&style=for-the-badge"
   />
-</a>
+</a> -->
