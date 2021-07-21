@@ -1,0 +1,14 @@
+
+{% if latest_question_list %}
+     <h1>testing shelob's lair!</h1>
+    <ul>
+        {% for question in latest_question_list %}
+        {% comment %} <li><a href="/example/{{ question.id }}/">{{question.question_text}}</a></li> {% endcomment %}
+        <li><a href="{% url 'example:detail' question.id%}">{{question.question_text}}</a></li>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls here!</p>
+    {{latest_question_list}}
+{% endif %}
