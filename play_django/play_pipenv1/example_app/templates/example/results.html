@@ -4,7 +4,10 @@
 
 <ul>
 {% for choice in question.choice_set.all %}
-    <li>{{% choice.choice_text %}} -- {{ choice.votes }} vote{{ choice.votes|pluralize }} </li>
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize}}
+    </li>
+    {% comment %} Could not parse the remainder: '% choice.choice_text %' from '% choice.choice_text %' {% endcomment %}
+    {% comment %} this {% endcomment %}
 {% endfor %}
 </ul>
 <a href="{% url 'example:detail' question.id %}">Vote again!!</a>

@@ -16,6 +16,6 @@ def fizzbuzz(input):
 
             print(i)
 
-fizzbuzz(16)
+fizzbuzz(20)
 # TIME FIRST TRY: ABOUT 5:15. Slow... I've seen the problem before but not sure I've ever written it
 # Or it's been years...
