@@ -17,9 +17,7 @@
 {% endcomment %}
 
 <!DOCTYPE html>
-
 <html>
-
     <head>
       <title>URL Shortener</title>
       <meta charset="UTF-8">
@@ -27,37 +25,31 @@
       <link rel="stylesheet" href="{% static 'url_app/github_necolas_normalize.css'%}">
       <link rel="stylesheet" href="{% static 'url_app/main.css'%}">
     </head>
-
   <body>
-
 
 {% if error_message %}
 <p><strong>{{ error_message }}</strong></p>
 {% endif %}
 
-
-
     <div>
-      <p>Your code for URL: <strong> {{ url_address }} </strong> is: <strong> {{ short_code }} </strong>.</p>
+      <p>Your code for URL: {{ url_address }} is below:
+        <br><br>
+        <strong> {{ short_code }} </strong>
+        <br>
+        </p>
       {% comment %} <p>Please use this link: </a href="{% static '/' %} {{ short_code }}/"> &#47;{{ short_code }}&#47; </a>  </p> {% endcomment %}
-      <p>Please use this link: <a href="http://localhost:8000/{{ short_code }}/"> http://localhost:8000/{{ short_code }}&#47; </a>  </p>
-      <p>Copy and paste: http://localhost:8000/{{ short_code }}/ </p>
+      <p>Please use this link to access it: <a href="http://localhost:8000/{{ short_code }}/"> http://localhost:8000/{{ short_code }}&#47; </a>  </p>
+      <p>Raw text: http://localhost:8000/{{ short_code }}/ </p>
     </div>
     
     <br> 
-    <h2>Thanks for using URL Shortener v2020!</h2>
+    <h2>Thanks for using URL Shortener v2021!</h2>
     <br> 
-    
-
   <body>
 </html>
 
-
-
 {% comment %} 
-
     I TRIED EVERY SINGLE ONE OF THE BELOW BEFORE 'GETTING IT RIGHT!!!'
-    
     <br>
       <h1>{{ url.short_code }} url.short_code  </h1>
       <h1>{{ url.url_address }} url.url_address </h1>
@@ -72,5 +64,4 @@
       <h1>{{ context.short_code }} context.short_code </h1>
       <h1>{{ context.url_address }} context.url_address </h1>
       </code>
-
 {% endcomment %}

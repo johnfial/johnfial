@@ -28,7 +28,7 @@ def generate_short_code(request):
         'short_code': short_code,
     }
 
-    print(f'>>>>>PRINT: FUNCTION RUNNING: generate_short_code... pairing url {url} with {short_code}.')
+    print(f'>>>>>PRINT: FUNCTION RUNNING: generate_short_code(request), pairing url {url} with {short_code}.')
     print(f'>>>>>PRINT: request.path : {request.path}.')
     print(f'>>>>>PRINT: request.body : {request.body}.') # this is kinda the 'raw' URL entered, with &url=stuff entered into form here
     # print(f'>>>>>PRINT: request.__dir__() : {request.__dir__()}.') # BIG, but only a few lines, mostly blank in this ex

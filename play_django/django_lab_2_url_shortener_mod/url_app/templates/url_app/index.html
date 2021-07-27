@@ -15,7 +15,7 @@
 
   <body>
 
-    <h1>URL Shortener v2020</h1>
+    <h1>URL Shortener v2021</h1>
 
     <br> 
 
@@ -24,8 +24,6 @@
             {% csrf_token %}
             <fieldset>
             <legend>Enter URL here:</legend>
-            {% comment %} <input type="text" id="code" name="code"/>
-            <input type="submit" value="TEMP REDIRECT"> {% endcomment %}
             <input type="text" id="url" name="url"/>
             <input type="submit" value="Generate Short Code">
             </fieldset>
@@ -38,7 +36,6 @@
     <div>
         <h2>Current Notes and Bugs:<h2>
         <li>Must have http:// or https:// ! </li>
-        <li>Doesn't track any metadata yet. Was starting to test print statements to track </li>
         <li>Doesn't track any metadata yet. Was starting to test print statements to track 'Origin', 'Referer', and 'Cookie', and also augment visited count by 1 (that will require changes to models.py and re-migration)</li>
     </div>
     
