@@ -25,6 +25,9 @@ class SignUpView(generic.CreateView):
 class UserProfileView(generic.DetailView):
     model = User
     template_name = 'user_profile.html'
+    
+    # new example now has this 
+    # context_object_name = 'user_profile'
 
     def get_object(self):
         return get_object_or_404(User, username=self.kwargs['username'])

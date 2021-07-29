@@ -21,9 +21,10 @@ class BlogListView(ListView):
 class BlogDetailView(DetailView):
     model = Post
     template_name = 'post_detail.html'
-    # login_url = 'login'
-    
+    # login_url = 'login'    
     # detailview is using int:pk ....
+
+# it's important that the Mixin goes before CreateView!
 
 class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Post
