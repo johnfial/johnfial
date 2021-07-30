@@ -23,10 +23,12 @@ def missing_int(input):
     # 4,000,000,000 integers (4 B)
     # 1 GB memory
 
-    # V2
-    # 1,000,000,000 integers (1 B)
-    # 10MB memory
+    # V2, now only
+    # 1,000,000,000 integers (1 B), and 
+    # 10MB memory...
+        # ...but all #s are now UNIQUE 
 
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
     # FIRST TRY, WORKS BUT HOW'S THE MEMORY CONSTRAINTS? DOES IT PASS?
     print(f'starting loop...')
     for x in range(len(input)):
@@ -41,6 +43,7 @@ def missing_int(input):
             return input
         else:
             print(f'{x} found in data list!')
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 
 missing_int(data)
