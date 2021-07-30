@@ -11,10 +11,10 @@ https://dev.to/alekswritescode/easiest-way-to-set-up-your-github-profile-page-3g
 -->
 
 
----
+<!-- ---
 ## TESTING AREA:
 <img alt="Css" src="https://img.shields.io/badge/Git-1572B6??logo=appveyor&logoColor=white&style=flat" />
-
+ -->
 ---
 ## Welcome to my GitHub!
 
