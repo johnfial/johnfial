@@ -10,5 +10,7 @@ class IsAuthorOrReadOnly(permissions.BasePermission):
             return True
         return object.author == request.user
 
-# NOTE
-# except I won't have an .author for a 'pokemon' object, will I?
+# NOTE TODO SECURITY ??
+class AllowAny(permissions.BasePermission):
+    def has_permission(self, request, view):
+        return True
