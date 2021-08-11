@@ -1,26 +1,63 @@
-{% if user.is_authenticated %}
-<h1>Welcome {{ user.username }}!</h1>
-<p><a href="{% url 'logout' %}">Logout</a><p>
-{% else %}
-<h1>Welcome, visitor!</h1>
-<p>You are not logged in. <a href="{% url 'login' %}">Login</a> <a href="{% url 'users:signup' %}">Sign Up</a></p>
-{% endif %}
+<title>Pokedex 2021, by Fial Consulting</title>
+<!-- https://github.com/PdxCodeGuild/class_salmon/blob/main/4%20Django/labs/lab07-pokedex.md
+ -->
 
-{% csrf_token %}
+<header>
+
+    {% if user.is_authenticated %}
+    <h1>Welcome {{ user.username }}!</h1>
+    <p><a href="{% url 'logout' %}">Logout</a><p>
+    {% else %}
+    <h3>Welcome, visitor!</h3>
+    <p>You are not logged in. <a href="{% url 'login' %}">Login</a> <a href="{% url 'users:signup' %}">Sign Up</a></p>
+    {% endif %}
+</header>
 
 <div id="vue_app">
+    
+    {% csrf_token %}
+    
     <div id="newdiv!">
-        <p v-for="pokemon in pokemon_list" :key="pokemon.id">
-            [[ pokemon ]]
-            [[ pokemon.name ]]
-        </p>
 
+{% comment %} 
+THIS IS A DJANGO COMMENT SECTION, ANY CODE WILL NOT APPEAR TO VUE OR THE BROWSER:
+
+TODO:
+    -- make an image_front and image_back alt="" text like :alt="'image_back for' [[ pokemon.name ]]"
+    -- ORDER by density!
+    -- add colors / styles
+    -- add add new pokemon form
+    -- add edit new pokemon page detail.html
+    -- add types / caught_by
+    -- 
+
+{% endcomment %}
+
+        <div v-for="pokemon in pokemon_list" :key="pokemon.id">
+                <h2>
+                    [[ pokemon.number ]]: [[ pokemon.name ]]
+                </h2>
+                <ul>    
+                    <li>Height: [[ pokemon.height ]] </li>
+                    <li>Weight: [[ pokemon.weight ]] </li>
+                    <li>Density : [[ pokemon.weight / pokemon.height ]] </li>
+                    
+                    <!-- TEMPORARILY COMMENTED OUT FOR QUICKER PAGE LOADING -->
+                    <!-- <img :src="[[ pokemon.image_front ]]" > -->
+                    <!-- <img :src="[[ pokemon.image_back ]]" > -->
+
+                    <!-- BLANK FOR NOW: -->
+                    <!-- <li>caught_by: [[ pokemon.caught_by ]] </li> -->
+                    <!-- <li>types: [[ pokemon.types ]] </li> -->
+                </ul>
+            {% comment %} <h3>            </h3> {% endcomment %}
+        </div>
     </div>
     
     <footer>
-        nothing in the footer        
+        nothing in the footer for nowsies
     </footer>
-</div>
+</div> <!-- END VUE.JS DIV ID="vue_app" -->
 
 <script src="https://unpkg.com/axios/dist/axios.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" ></script>
@@ -30,18 +67,18 @@
         delimiters: ['[[', ']]'],
         data: {
             csrf_token: '',
+            error: {},
+            pokemon_list: [],
             new_pokemon: {                            
                 number: 0,
                 name: '',
                 height: 0,
                 weight: 0,
-                image_front: 0,
+                image_front: '',
                 image_back: '',
                 caught_by: '',
                 types: '',
             },
-            error: {},
-            pokemon_list: [],
         }, // end Vue data
         methods: {
             populate_pokemon: function() {
