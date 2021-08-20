@@ -4,14 +4,14 @@
 # Amazon: https://www.amazon.com/Cracking-Coding-Interview-Gayle-McDowell/dp/0984782850/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=careercup-ctciwebsite-20&linkId=173f3d8878a1d7f0d131a85fbfc9f67f
 # Solutions GitHub: https://github.com/careercup/CtCI-6th-Edition
 
-# TODO STATUS:    Started 22 April
+# TODO STATUS:    Started 22 April, looked @ 20 August...
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-
 
 # xx: Valid parenthesis:
 # Write a method to validate parenthesis within a string: i.e. that all are in order, matching, "balanced", etc.
 # NOTE list.sort() does NOT help me, for obvious reasons...
+# NOTE below is only for (), leetcode #20 includes braces and brackets
 
 example_1 = 'jello()' # valid
 example_2 = 'jello()()' # valid
@@ -19,7 +19,7 @@ example_3 = 'jello(())'  # valid
 example_4 = 'jello(()())'  # valid
 example_5 = '(jello)()()' # valid
 
-example_6 = ')jello(' # invalid, even though even...
+example_6 = ')jello(' # invalid, even though even # and balanced...
 example_7 = ')jello))' # invalid
 example_8 = 'jello)' # invalid
 example_9 = 'jello))((' # invalid
