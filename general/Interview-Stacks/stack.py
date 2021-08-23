@@ -48,6 +48,7 @@ class MyFirstStack():
 
 
 new_stack = MyFirstStack(55)
+# new_stack = MyFirstStack('55')
 print(new_stack.peek)
 print(new_stack.main_array)
 new_stack.push(3)
@@ -57,7 +58,7 @@ new_stack.push(8)
 print(new_stack.peek)
 print(new_stack.main_array)
 new_stack.push(27)
-print(new_stack.peek)
+print(new_stack.peek())
 print(new_stack.main_array)
 
 
