@@ -1,6 +1,5 @@
-
-
 # coded by grant, me talking:
+# edited aug 2021
 
 class LinkListNode:
     # track all created nodes and provide unique identifiers for each node
@@ -11,6 +10,8 @@ class LinkListNode:
         self.id = LinkListNode.id
         self.next = None
         self.data = data
+        # print(f'll node created at id:{self.id}')
+        print(self)
 
     def __repr__(self):
         n = "None"
@@ -27,8 +28,10 @@ class LinkedList:
         else:
             # empty ll
             self.head = None
+        print(self)
 
     def __repr__(self):
+        print('__repr__ for LinkedList running...')
         ll = []
         cur = self.head
         while cur:
@@ -136,7 +139,9 @@ def test_ll_remove():
 
     print(ll.tail.id == 4)
     print(ll.head.id == 2)
-    
+
+test_ll_remove()
+
 # reverse the link list
 def test_ll_rev():
     n1 = LinkListNode()
