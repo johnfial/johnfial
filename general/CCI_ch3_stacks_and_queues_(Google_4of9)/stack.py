@@ -47,6 +47,7 @@ class MyFirstStack():
             return True
 
 
+
 new_stack = MyFirstStack(55)
 # new_stack = MyFirstStack('55')
 print(new_stack.peek)
