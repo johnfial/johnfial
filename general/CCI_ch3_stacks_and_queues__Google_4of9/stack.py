@@ -1,67 +1,51 @@
-# Book:
-    # p98 describe how you could use a single array to implement three stacks!
-    # hints 2, 12, 38, 58
-    # hint: divide them well... can we make three lists in a list?
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# by John Fial, 2021, https://github.com/johnfial/
+# https:// web address
+# http://www.crackingthecodinginterview.com/solutions.html 
+# TODO STATUS:    Working 2021 Sept 8...
 
-# Functions I need for the stack:
-    # pop() remove the top (last, most recent) item
-    # push(item) add an item to the top
-    # peek() return the top of the stack
-    # isEmpty() returns true only if the stack is empty
+# online @ https://youtu.be/wjI1WNcIntg?t=227 (Stack at 227s)
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-# Functions I need for the queue:
-    # add(item) add to the stack
-    # remove() remove the FIRST item in the stack
-    # peek() returns the top (last) item
-    # isEmpty() returns true only if the queue is empty...
+# NOTE remember Stack is LIFO
 
-# https://www.w3schools.com/python/python_ref_list.asp
-class MyFirstStack():    
-    # array1 = []
-    # array2 = []
-    # array3 = []
-    # main_array = [array1, array2, array3]
-    main_array = []
-    def __init__(self, k:int):
-        print(f'created new stack')
-        self.main_array.append(k)
-        return
-    def __len__(self):
-        print('len() function')
-        return len(self.main_array)
+class Node():
+    
+    data = None
+    next = None
+
+
+    def __init__(self, data):
+        self.data = data
+
+    def __str__(self) -> str:
+        return self.data
+
+class Stack():
+
+    # TODO isEmpty()
+    # peek/look/inspect
+    # TODO make add/push
+    # TODO make remove/pop
+    # TODO test cases?
+    
+    top = Node()
+    
+    def isEmpty(self):
+        if self.top == None:
+            return True
+    
+    def peek(self):
+        return self.top.data
+
+    def push(self, data: int):
+        # create new node
+        # new node  = top, top redefined
+        # top points to node created
+        print(data)
+        pass
 
     def pop(self):
-        print(f'pop(self)')
-        self.main_array.pop(len(self.main_array))
-        return 
-
-    def push(self, k):
-        self.main_array.append(k)
-        return
-
-    def peek(self):
-        return self.main_array[-1]
-
-    def isEmpty(self):
-        if len(self.main_array) == 0:
-            return True
-
-
-
-new_stack = MyFirstStack(55)
-# new_stack = MyFirstStack('55')
-print(new_stack.peek)
-print(new_stack.main_array)
-new_stack.push(3)
-print(new_stack.peek)
-print(new_stack.main_array)
-new_stack.push(8)
-print(new_stack.peek)
-print(new_stack.main_array)
-new_stack.push(27)
-print(new_stack.peek())
-print(new_stack.main_array)
-
-
-
-print(new_stack.peek)
+        # first get the data from top.data
+        # top moves to top.next
+        return self.data
