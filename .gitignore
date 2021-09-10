@@ -1,7 +1,9 @@
 *.lnk
+
 *password*.py
 *password*.md
 *password*
+
 *.pyc
 *.secrets
 *secrets
