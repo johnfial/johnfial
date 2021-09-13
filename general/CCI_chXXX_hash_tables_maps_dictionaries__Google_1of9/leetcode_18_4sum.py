@@ -1,10 +1,38 @@
+# https://leetcode.com/problems/4sum/
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 
+class Solution:
+    def fourSum(self, nums: list[int], target: int) -> list[list[int]]:
+        pass
+
+def fourSum(array, target):
+    for num in array:
+        print(target)
+
+    answers = []
+    a = 0
+    b = 1
+    c = 2
+    d = 3
+    if nums[a] + nums[b] + nums[c] + nums[d] == target:
+        print(f'{nums[a]} + {nums[b]} + {nums[c]} + {nums[d]} == {target}')
+        answers.append((nums[a], nums[b], nums[c], nums[d]))  # BUG gives it a tuple...
+    
+    print(answers)
 
 
+nums = [1, 0, -1, 0, -2, 2]
+target = 0
+
+# # example 2:
+# nums = [2, 2, 2, 2, 2, ]
+# target = 8
+
+fourSum(nums, target)
 
 
-
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # # https://leetcode.com/problems/4sum/
 
 # 18. 4Sum

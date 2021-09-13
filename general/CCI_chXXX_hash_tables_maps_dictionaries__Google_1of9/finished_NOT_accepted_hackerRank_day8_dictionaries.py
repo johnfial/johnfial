@@ -1,26 +1,49 @@
 # # https://www.hackerrank.com/challenges/30-dictionaries-and-maps/problem
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-
 phone_book = {}
-def phone_book_create_and_lookup(string):
+
+def phone_book_create_and_lookup(STDIN):
 
     temp_list = []
+
     # split lines into a list of strings
-    for line in string.split('\n'):
+    for line in STDIN.split('\n'):
         temp_list.append(line)
 
-    # take the first item (list[0]) and int() into for...
-    # for x in range(above)
-    for x in range(int(temp_list[0])+1):
-        print(temp_list[x+1])
-        # NOTE working here:
+    # print(f' initial input list is: {temp_list}')
+    # take the first item (list[0]) and int() into for x in range
+    number_entries = int(temp_list[0])
+
+    for x in range(number_entries):
+        # print(temp_list[x+1])
+    
+    
         # split the string into key/value at the space
+        temp_list_2 = temp_list[x+1].split(' ')
+        
         # store temp variables
+        name = temp_list_2[0]
+        number = temp_list_2[1]
+        
         # add name.value do dict via dict[key] = value
-    # then for the remaining lines, print() output for key lookups...
-    # if not found, print 'Not found' # if key in dict
-    # print('Not found')
+        phone_book[name] = number
+    
+    # print(f'phone book is now {phone_book}')
+
+    # NOTE NOTE NOTE 
+    # NOTE working here:
+    i = number_entries+1
+    while i < len(temp_list):
+        # print(f'command is "{temp_list[i]}", printing...')
+        try:
+            # then for the remaining lines, print() output for key lookups...
+            print(f'{temp_list[i]}={phone_book[temp_list[i]]}')
+        except:
+            # if not found, print 'Not found' # if key in dict
+            print('Not found')
+
+        i += 1
 
 example_1 = '''3
 sam 99912222
