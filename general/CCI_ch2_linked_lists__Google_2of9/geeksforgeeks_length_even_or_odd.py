@@ -1,6 +1,47 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# if there's an ID with incremented numbers AND nothing has been deleted, the easiest way is to % 2 the ID 
+# if not:
+    #  one way is to iterate through the nodes and increment a counter
+    # another is to add the node count to the LinkedList implementation, then add/remove count appropriately
+    # 
+
+    # NOTE LOOKUP: how can I make my datatype iterable in Python?
+
+from  linked_list import LinkListNode, LinkedList
+
+def is_even_or_odd(ll):
+    # NOTE working here
+    for node in ll:
+        print(node)
+
+        pass
+
+n1 = LinkListNode(111) # id: 1
+n2 = LinkListNode(222) # id: 2
+n3 = LinkListNode(333) # id: 3
+n4 = LinkListNode(444) # id: 4
+n5 = LinkListNode(555) # id: 5
+n6 = LinkListNode(666)
+n7 = LinkListNode(777)
+
+ll = LinkedList(n1) # 1 ~>>
+ll.link(n1, n2) # 1 ~>> 2
+ll.link(n2, n3) # 1 ~>> 2 ~>> 3
+ll.link(n3, n4) # 1 ~>> 2 ~>> 3 ~>> 4
+ll.link(n4, n5) # 1 ~>> 2 ~>> 3 ~>> 4 ~>> 5
+
+is_even_or_odd(ll)
 
 
 
+
+
+
+
+
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # # https://practice.geeksforgeeks.org/problems/linked-list-length-even-or-odd/1
 
 # Linked List Length Even or Odd?

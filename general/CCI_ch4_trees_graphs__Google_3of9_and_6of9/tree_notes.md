@@ -28,3 +28,5 @@
 
 # # # # # # # # # # # # 
 # a TRIE is a kind of tree that stores value for each node based on position in the trie (commonly used for strings)
+    - name from reTRIEval, used most often for fast word-suggestions as a string is typed
+    - see https://drstearns.github.io/tutorials/trie/

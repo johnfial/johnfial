@@ -1,23 +1,23 @@
-# coded by grant, me talking:
-# edited aug 2021
+# coded by grant, me talking, # NOTE edited Sept 2021, for original see secrets.py file
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-class LinkListNode:
-    # track all created nodes and provide unique identifiers for each node
+class LinkListNode:  # track all created nodes and provide unique identifiers for each node
     id = 0
 
     def __init__(self, data=None):
         LinkListNode.id += 1
         self.id = LinkListNode.id
-        self.next = None
         self.data = data
-        # print(f'll node created at id:{self.id}')
-        print(self)
+        self.next = None
+        # self.prev = None (doubly-linked list)
+        print(f'll node created at id:{self.id}')
+        # print(self)
 
     def __repr__(self):
         n = "None"
         if self.next is not None:
             n = self.next.id
-        return f"<id: {self.id}, next: {n}, data: {self.data}>"
+        return f"<ID: {self.id}, next ID: {n}, data: {self.data}>"
 
 class LinkedList:
 
@@ -49,7 +49,10 @@ class LinkedList:
             else:
                 cur = cur.next
 
-    def push(self, n):
+    def push(self, n):  #wtf does push do? shouldn't it add a new node,
+                        # replace the tail with the new node, 
+                        # and link the previous to the new tail/node? is this correct?
+                        # was grant thinking of the Stack idea (LIFO)?
         n.next = self.head
         self.head = n
 
@@ -111,6 +114,25 @@ class LinkedList:
             print(temp)
             temp = temp.next
 
+# NOTE working here, commands:
+n1 = LinkListNode(111) # id: 1
+n2 = LinkListNode(222) # id: 2
+n3 = LinkListNode(333) # id: 3
+n4 = LinkListNode(444) # id: 4
+n5 = LinkListNode(555) # id: 5
+n6 = LinkListNode(666)
+n7 = LinkListNode(777)
+
+ll = LinkedList(n1) # 1 ~>>
+ll.link(n1, n2) # 1 ~>> 2
+ll.link(n2, n3) # 1 ~>> 2 ~>> 3
+ll.link(n3, n4) # 1 ~>> 2 ~>> 3 ~>> 4
+ll.link(n4, n5) # 1 ~>> 2 ~>> 3 ~>> 4 ~>> 5
+
+print(ll)
+ll.delete(n3)
+print(ll)
+
 # delete a node and re-link the list
 def test_ll_remove():
     n1 = LinkListNode() # id: 1
@@ -140,7 +162,7 @@ def test_ll_remove():
     print(ll.tail.id == 4)
     print(ll.head.id == 2)
 
-test_ll_remove()
+# test_ll_remove()
 
 # reverse the link list
 def test_ll_rev():

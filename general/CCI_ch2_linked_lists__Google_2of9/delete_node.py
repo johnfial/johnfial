@@ -1,5 +1,6 @@
 
-
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# Exercise: 
 # https://www.interviewcake.com/question/python3/delete-node?course=fc1&section=linked-lists
 
 #  Delete a node from a singly-linked list, ↴ given only a variable pointing to that node.
@@ -24,7 +25,14 @@ class LinkedListNode(object):
         # link the previous node to the next (temp variable)
         print(self)
         pass
-    
+
+def delete_node(input_node):
+    # NOTE working here
+    for node in node_list:
+        if node.next = input_node.value:
+            node.next = input_node.next
+            return node.next
+
 
 a = LinkedListNode('AAA')
 b = LinkedListNode('BBB')
