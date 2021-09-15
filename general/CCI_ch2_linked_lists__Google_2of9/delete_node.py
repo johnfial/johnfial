@@ -7,6 +7,11 @@
 
 # The input could, for example, be the variable b below:
 
+# NOTE merge this...
+# NOTE merge this...
+# NOTE merge this...
+from LinkedList import LinkListNode, LinkedList
+
 class LinkedListNode(object):
 
     def __repr__(self) -> str:

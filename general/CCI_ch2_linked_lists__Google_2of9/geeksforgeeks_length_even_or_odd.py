@@ -7,7 +7,7 @@
 
     # NOTE LOOKUP: how can I make my datatype iterable in Python?
 
-from  linked_list import LinkListNode, LinkedList
+from LinkedList import LinkListNode, LinkedList
 
 def is_even_or_odd(ll):
     # NOTE working here

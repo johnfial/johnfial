@@ -1,3 +1,5 @@
+**NOTE: Heaps are included only a little in Chapter 4 (Trees and Graphs)**
+
 # Heaps
     - A heap is a subset of a (binary) tree, itself (as all trees are) a subset of a graph
     - A Heap is a subset of binary trees, with extra rules:

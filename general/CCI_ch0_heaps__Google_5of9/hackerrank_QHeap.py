@@ -1,20 +1,7 @@
+from Heap import MinHeap
 
 
-class Heap():
-    # see an example at bottom of https://www.programiz.com/dsa/priority-queue
-    data = []
-    # use an array to implement!
-    # formula for parent/child
-    # parent = i-2 / 2          (round up!)
-    # left = 2x + 1
-    # right = 2i + 2
-    
-    def __init__(self, data: list):
-        self.data = data
-    
-
-
-
+# # # # # # # # # # # # # # # # # # # # # # # # 
 # # https://www.hackerrank.com/challenges/qheap1/problem
 # This question is designed to help you get a better understanding of basic heap operations.
 
