@@ -8,7 +8,6 @@
 
 
 
-
 # 3.3 Stack of Plates:
 # (copied rather than transcribed, cheating!)
 # # Imagine a (literal) stack of plates. If the stack gets too high, it might topple.
