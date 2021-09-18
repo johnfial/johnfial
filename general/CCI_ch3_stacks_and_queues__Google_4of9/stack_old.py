@@ -3,18 +3,6 @@
     # hints 2, 12, 38, 58
     # hint: divide them well... can we make three lists in a list?
 
-# Functions I need for the stack:
-    # pop() remove the top (last, most recent) item
-    # push(item) add an item to the top
-    # peek() return the top of the stack
-    # isEmpty() returns true only if the stack is empty
-
-# Functions I need for the queue:
-    # add(item) add to the stack
-    # remove() remove the FIRST item in the stack
-    # peek() returns the top (last) item
-    # isEmpty() returns true only if the queue is empty...
-
 # https://www.w3schools.com/python/python_ref_list.asp
 class MyFirstStack():    
     # array1 = []

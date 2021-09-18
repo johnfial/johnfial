@@ -66,36 +66,34 @@ class BinaryTree():
     #         if current_node.right_child:
     #             queue.put(current_node.right_child)
 
-tree1 = BinaryTree('aaa')
-# print(tree1)
-tree1.insert_left('bbb')
-# print(tree1)
-tree1.insert_right('ccc')
-# print(tree1.left_child.left_child.left_child)
+def main():
+    tree1 = BinaryTree('aaa')
+    # print(tree1)
+    tree1.insert_left('bbb')
+    # print(tree1)
+    tree1.insert_right('ccc')
+    # print(tree1.left_child.left_child.left_child)
 
-# # # 
+    # # # 
 
-a = BinaryTree('aaa')
-a.insert_left('bbb')
-a.insert_right('ccc')
+    a = BinaryTree('aaa')
+    a.insert_left('bbb')
+    a.insert_right('ccc')
 
-b = a.left_child
-b.insert_right('ddd')
+    b = a.left_child
+    b.insert_right('ddd')
 
-c = a.right_child
-c.insert_left('e')
-c.insert_right('f')
+    c = a.right_child
+    c.insert_left('e')
+    c.insert_right('f')
 
-d = b.right_child
-e = c.left_child
-f = c.right_child
+    d = b.right_child
+    e = c.left_child
+    f = c.right_child
 
-# a.DFS_pre_order()
-a.DFS_in_order()
-a.DFS_post_order()
-
-
-
+    # a.DFS_pre_order()
+    # a.DFS_in_order()
+    # a.DFS_post_order()
 
 
 
@@ -103,3 +101,9 @@ a.DFS_post_order()
 
 
 
+
+
+
+
+if __name__ == '__main__':
+    main()

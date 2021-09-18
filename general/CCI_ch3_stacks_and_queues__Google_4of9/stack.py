@@ -48,21 +48,6 @@ class Stack():
         self.top = self.top.next
         self.size -= 1 
         return popped_data
-
-
-# newstack = Stack()
-# newstack.push(55)
-# newstack.push(5511)
-# print(newstack.top)
-# print(newstack.top.next)
-# print(newstack.top.next.next)
-# print(newstack.top.next.next.next)
-# newstack.push(333)
-# print(newstack.top)
-# print(newstack.size)
-# newstack.pop()
-# print('~~~~~~~~~working here~~~~~~~~~')
-# print(newstack.top)
-# print(newstack.size)
-
-
+    
+    def __repr__(self) -> str:
+        return f'self.top = {self.top}, self.size = {self.size}'

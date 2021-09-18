@@ -12,6 +12,7 @@
 # Write a method to validate parenthesis within a string: i.e. that all are in order, matching, "balanced", etc.
 # NOTE list.sort() does NOT help me, for obvious reasons...
 # NOTE below is only for (), leetcode #20 includes braces and brackets
+# NOTE help: https://www.youtube.com/watch?v=IhJGJG-9Dx8
 
 example_1 = 'jello()' # valid
 example_2 = 'jello()()' # valid
