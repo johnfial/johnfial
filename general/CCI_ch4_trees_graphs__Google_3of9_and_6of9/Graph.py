@@ -60,8 +60,10 @@ class GraphDirected():
         # NOTE and pushing only via .append() to the end
         # NOTE that's the same as a queue FIFO !
         while len(queue) > 0:
-            
-
+            current = queue.pop(0)
+            print(current)
+            for neighbor in self.data[current]:
+                queue.append(neighbor)
         
         # Breadth first traversal Uses Queue(), because, we want first in first out to stay local...
 
