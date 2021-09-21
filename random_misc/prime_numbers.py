@@ -41,10 +41,11 @@ def find_prime_numbers_through(ceiling):
         if check_is_prime(number) == True:
             primes_found.append(number)
     print(f'You found a total of {len(primes_found)} prime numbers between 1-{ceiling}:') # {primes_found}.')
+    print(primes_found)
     return primes_found
 
 # check_is_prime(24)
-find_prime_numbers_through(1000000)
+find_prime_numbers_through(1000)
     # 1,000     = < 1 second 
     # 10,000    = ~ 1-2 seconds... 
     # 100,000   = 38 seconds!
