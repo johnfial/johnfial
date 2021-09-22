@@ -1,33 +1,28 @@
-trib_list = [0, 0, 1, 1, 2, 4, 7, 13, 24, 44]
-# 30 TAKES A FEW SECONDS! 
-trib_list_30 = [0, 0, 1, 1, 2, 4, 7, 13, 24, 44, 81, 149, 274, 504, 927, 1705, 3136, 5768, 10609, 19513, 35890, 66012, 121415, 223317, 410744, 755476, 1389537, 2555757, 4700770, 8646064]
+# 30 TAKES A FEW SECONDS unless memoized! 
+# trib_list_30 = [0, 0, 1, 1, 2, 4, 7, 13, 24, 44, 81, 149, 274, 504, 927, 1705, 3136, 5768, 10609, 19513, 35890, 66012, 121415, 223317, 410744, 755476, 1389537, 2555757, 4700770, 8646064]
 trib_list = []
 
-def tribonacci(n):
-    # WORKING:
-    if n == 0:
-      return 0
-    if n == 1:
-      return 0
-    if n == 2:
-      return 1
+def tribonacci(n, trib_list=[0, 0, 1, ]):
+    
+    # this isn't necessary with a memoized list of the first few items
+    # if n == 0 or n == 1:
+    #   return 0
+    # if n == 2:
+    #   return 1
 
-    return tribonacci(n-1) +  tribonacci(n-2) + tribonacci(n-3)
+    try:
+        return trib_list[n]
+    except: 
+        new = tribonacci(n-1, trib_list) +  tribonacci(n-2, trib_list) + tribonacci(n-3, trib_list)
+        trib_list.append(new)
+        return trib_list[n]
+        
+to_print = []
 
-    # TODO memo-ize it...
-    # try:
-    #     if (trib_list[n]):
-    #         return (trib_list[n])
-    # except:
-    #     new_num = tribonacci(n-1) +  tribonacci(n-2) + tribonacci(n-3)
-    #     trib_list.append(new_num)
-    # return new_num
+for n in range(200):
+    to_print.append(tribonacci(n))
 
-
-for n in range(20):
-    trib_list.append(tribonacci(n))
-
-print(trib_list)
+print(to_print)
 
 
 
