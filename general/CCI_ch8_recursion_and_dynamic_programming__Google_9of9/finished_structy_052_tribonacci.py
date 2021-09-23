@@ -1,10 +1,15 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# by John Fial, 2021, https://github.com/johnfial/
+# TODO STATUS:    Finished
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
 # 30 TAKES A FEW SECONDS unless memoized! 
 # trib_list_30 = [0, 0, 1, 1, 2, 4, 7, 13, 24, 44, 81, 149, 274, 504, 927, 1705, 3136, 5768, 10609, 19513, 35890, 66012, 121415, 223317, 410744, 755476, 1389537, 2555757, 4700770, 8646064]
 trib_list = []
 
 def tribonacci(n, trib_list=[0, 0, 1, ]):
     
-    # this isn't necessary with a memoized list of the first few items
+    # this isn't necessary with a memoized list of the first few items, but it's the base case for the non-memoized version:
     # if n == 0 or n == 1:
     #   return 0
     # if n == 2:
@@ -18,18 +23,12 @@ def tribonacci(n, trib_list=[0, 0, 1, ]):
         return trib_list[n]
         
 to_print = []
-
 for n in range(200):
     to_print.append(tribonacci(n))
-
 print(to_print)
 
 
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# by John Fial, 2021, https://github.com/johnfial/
-# TODO STATUS:    Working 2021 September...
-# TODO SUBMITTED: No
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # # #52 tribonacci
 # https://structy.net/problems/tribonacci
