@@ -16,6 +16,8 @@ def distribute_chocolate(packets_list, students):
     # TODO 2 add m elements to a list
     # TODO 3 calculate the max() and min() of those, then calculate difference; STORE THAT variable
     # TODO 4 repeat for each combination while i + m < len(packets_list)
+    # TODO return min of those differences... ideally, too, store WHERE (which sequence 
+    # of student #s of packets) that group of packets was from
 
     compare_list = []
     try:
