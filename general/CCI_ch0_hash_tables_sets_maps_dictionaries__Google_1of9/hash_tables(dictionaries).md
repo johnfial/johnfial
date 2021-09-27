@@ -2,3 +2,6 @@
 # linear probing
     # clustering, not good...
 # separate chaining?
+
+# Hash Sets
+- python: `var_name = set()`
