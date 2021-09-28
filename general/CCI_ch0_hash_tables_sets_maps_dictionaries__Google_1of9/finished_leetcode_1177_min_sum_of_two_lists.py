@@ -1,7 +1,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # by John Fial, 2021, https://github.com/johnfial/
 # TODO STATUS:    Working 2021 September...
-# TODO SUBMITTED: No
+# TODO SUBMITTED: Technically fail test 4 (current line 44 below, but seems fine to me, their output is wierd...)
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 # 1177 Minimum Index Sum of Two Lists
@@ -31,19 +31,17 @@ def common_restaurants(list1, list2):
 
     min = (float('inf'))
     for key, value in dict1.items():
-        print(key, value)
+        # print(key, value)
         if value < min:
             min = value
         common.insert(value, key)
     
-    print(common)
-    return common
+    print(common[0])
+    return common[0]
 
 # common_restaurants(["Shogun","Tapioca Express","Burger King","KFC"],["Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"])
-common_restaurants(["Shogun","Tapioca Express","Burger King","KFC"],["KFC","Shogun","Burger King"])
-
-input = ["Shogun","Tapioca Express","Burger King","KFC"]
-["Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"] # Expected: ["Shogun"]
+# common_restaurants(["Shogun","Tapioca Express","Burger King","KFC"],["KFC","Shogun","Burger King"])
+common_restaurants(["Shogun","Tapioca Express","Burger King","KFC"], ["Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"]) # Expected: ["Shogun"]
 # Output: ["S","h","o","g","u","n"]
 # Expected: ["Shogun"]
 

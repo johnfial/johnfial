@@ -6,30 +6,42 @@
 
 # Two Sum
 
+def two_sum(nums, target, memo={}):
 
-def two_sum(nums, target):
-    c1 = -1
-    c2 = 0
+    # some special cases
+    if target == 0:
+        return []
+    if target < 0:
+        return None
+    if target in memo:
+        return memo[target]
 
-    # for combo in range(len(nums) ** 2):
-    #     print(f'trying combo {combo}')
-        
-    #     if nums[c1] + nums[c2] == target:
-    #         return [c1, c2]
-    #     if c1 == c2:
-    #         pass
-    #     c1 += 1
-    #     c2 += 1
+    for num in nums:
+        remainder = target - num
+        result = two_sum(nums, remainder, memo)
 
-    y = nums[0]
-    for x in range(len(nums)):
-        if nums[x] == target - y:
-            print(f'nums[{x}] - {y} == target: {target}')
-            return [x, 0]
+        if result != None:
+            temp = [num]
+            result.extend(temp)
 
-# print(two_sum([2,7,11,15],9))
-# print(two_sum([3,2,4,],6))
-# print(two_sum([3,3,],6))
+            memo[target] = result
+            return memo[target]
+
+    def old(nums, target):
+        y = nums[0]
+        for x in range(len(nums)):
+            if nums[x] == target - y:
+                print(f'nums[{x}] - {y} == target: {target}')
+                return [x, 0]
+
+    memo[target] = None
+    return None
+
+
+print(two_sum([5,3,4,7,],7))
+print(two_sum([2,7,11,15],9))
+print(two_sum([3,2,4,],6))
+print(two_sum([3,3,],6))
 print(two_sum([3,9,94, 8, 5, 2, 7, 78, 78, 45, 12, 45, 56, 89, 1,5, 4, 2, 1, ],7))
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
