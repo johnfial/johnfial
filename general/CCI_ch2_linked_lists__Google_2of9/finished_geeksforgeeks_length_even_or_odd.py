@@ -1,20 +1,38 @@
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# by John Fial, 2021, https://github.com/johnfial/
+# NOTE STATUS    : Started 2021 September
+# TODO SUBMITTED : 
+# NOTE Concepts  :  
+# - Linked Lists
+# - 
+# - 
 # if there's an ID with incremented numbers AND nothing has been deleted, the easiest way is to % 2 the ID 
 # if not:
     #  one way is to iterate through the nodes and increment a counter
     # another is to add the node count to the LinkedList implementation, then add/remove count appropriately
     # 
-
-    # NOTE LOOKUP: how can I make my datatype iterable in Python?
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 from LinkedList import LinkListNode, LinkedList
 
-def is_even_or_odd(ll):
-    # NOTE working here
-    for node in ll:
-        print(node)
+def is_even_or_odd(head):  # True 1 if even, 0 False if odd
 
-        pass
+    # NOTE LOOKUP: how can I make my datatype iterable in Python?
+
+    if head.data == None: return None
+
+    count = 0
+    current = head
+    while current != None:
+        print(current.data)
+        current = current.next
+        count += 1
+
+    if count % 2 == 0:
+        return True  # even, 1
+    if count % 2 == 1:
+        return False  # odd, 2
 
 n1 = LinkListNode(111) # id: 1
 n2 = LinkListNode(222) # id: 2
@@ -24,13 +42,19 @@ n5 = LinkListNode(555) # id: 5
 n6 = LinkListNode(666)
 n7 = LinkListNode(777)
 
-ll = LinkedList(n1) # 1 ~>>
-ll.link(n1, n2) # 1 ~>> 2
-ll.link(n2, n3) # 1 ~>> 2 ~>> 3
-ll.link(n3, n4) # 1 ~>> 2 ~>> 3 ~>> 4
-ll.link(n4, n5) # 1 ~>> 2 ~>> 3 ~>> 4 ~>> 5
+# ll = LinkedList(n1) # 1 ~>>
+# ll.link(n1, n2) # 1 ~>> 2
+# ll.link(n2, n3) # 1 ~>> 2 ~>> 3
+# ll.link(n3, n4) # 1 ~>> 2 ~>> 3 ~>> 4
+# ll.link(n4, n5) # 1 ~>> 2 ~>> 3 ~>> 4 ~>> 5
 
-is_even_or_odd(ll)
+n1.next = n2
+n2.next = n3
+n3.next = n4
+n4.next = n5
+n5.next = n6
+n6.next = n7
+print(is_even_or_odd(n1))
 
 
 

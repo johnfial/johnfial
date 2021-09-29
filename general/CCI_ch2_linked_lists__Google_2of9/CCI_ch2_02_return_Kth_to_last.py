@@ -8,24 +8,17 @@
 # - 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-# 1.x
+# CCI_ch2_02_return_Kth_to_last.py
+# Return Kth to Last:
+# Implement an algorithm to find the kth to last element of a singly linked list:
+
+# Hints: 8, 25, 41, 67, 126
 
 
 # EXAMPLE:
 # Input:      
 # Output:     
 # Hints: 
-
-
-# CCI_ch2_01_remove_duplicates.py
-# Remove Duplicates:
-
-# Write code to remove duplicates from an unsorted linked list.
-
-# Hints: 9, 40
-# FOLLOW UP: How would you solve this problem if a temporary buffer is not allowed?
-
-
 
 
 

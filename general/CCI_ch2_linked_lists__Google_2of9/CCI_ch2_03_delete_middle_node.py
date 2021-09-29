@@ -10,22 +10,21 @@
 
 # 1.x
 
+# CCI_ch2_03_delete_middle_node.py
+# Delete Middle Node:
+# Implement an algorithm to delete a node in the middle (i.e. NOT the first or last node,
+# not necessarily the exact middle) of a singly linked list, given only access to that node.
 
 # EXAMPLE:
-# Input:      
-# Output:     
+# input: the node c from the linked list a -> b -> c -> d -> e -> f
+# output : nothing returned, but the new list is a -> b -> d -> e -> f
+
+# Hints: 72
+
+# EXAMPLE:
+# Input:
+# Output:
 # Hints: 
-
-
-# CCI_ch2_01_remove_duplicates.py
-# Remove Duplicates:
-
-# Write code to remove duplicates from an unsorted linked list.
-
-# Hints: 9, 40
-# FOLLOW UP: How would you solve this problem if a temporary buffer is not allowed?
-
-
 
 
 

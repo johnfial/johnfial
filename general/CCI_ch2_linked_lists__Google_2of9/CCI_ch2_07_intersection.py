@@ -17,17 +17,6 @@
 # Hints: 
 
 
-# CCI_ch2_01_remove_duplicates.py
-# Remove Duplicates:
-
-# Write code to remove duplicates from an unsorted linked list.
-
-# Hints: 9, 40
-# FOLLOW UP: How would you solve this problem if a temporary buffer is not allowed?
-
-
-
-
 
 
 

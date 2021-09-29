@@ -8,24 +8,19 @@
 # - 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-# 1.x
+# 
+# CCI_ch2_06_palindrome.py
+# Palindrome:
+
+# Implement a function to check if a linked list is a palindrome. (same forward/backwards)
+
+# Hints: 5, 13, 29, 61, 101
 
 
 # EXAMPLE:
 # Input:      
 # Output:     
 # Hints: 
-
-
-# CCI_ch2_01_remove_duplicates.py
-# Remove Duplicates:
-
-# Write code to remove duplicates from an unsorted linked list.
-
-# Hints: 9, 40
-# FOLLOW UP: How would you solve this problem if a temporary buffer is not allowed?
-
-
 
 
 
