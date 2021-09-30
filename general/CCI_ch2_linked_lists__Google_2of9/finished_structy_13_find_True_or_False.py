@@ -14,6 +14,17 @@ class Node:
     self.val = val
     self.next = None
 
+a = Node("a")
+b = Node("b")
+c = Node("c")
+d = Node("d")
+
+a.next = b
+b.next = c
+c.next = d
+
+# a -> b -> c -> d
+
 def linked_list_find(head, target):
     if head == None: return False
     current = head
@@ -34,17 +45,6 @@ def linked_list_find_recursive(head, target):
     current = head
     return linked_list_find_recursive(head.next, target)
 
-
-a = Node("a")
-b = Node("b")
-c = Node("c")
-d = Node("d")
-
-a.next = b
-b.next = c
-c.next = d
-
-# a -> b -> c -> d
 
 # print(linked_list_find(a, "d")) # True
 print(linked_list_find_recursive(a, 'd'))

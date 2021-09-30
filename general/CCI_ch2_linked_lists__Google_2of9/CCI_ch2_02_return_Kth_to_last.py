@@ -14,6 +14,9 @@
 
 # Hints: 8, 25, 41, 67, 126
 
+# 0 a doubly linked list, or a list with the tail, could just reverse traverse from the tail K.
+# 1 build
+# 2 TODO 1 put into array, go to array[-K], return .value or node ...
 
 # EXAMPLE:
 # Input:      

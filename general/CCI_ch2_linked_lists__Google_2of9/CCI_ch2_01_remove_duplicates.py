@@ -21,6 +21,12 @@
 # Remove Duplicates:
 
 # Write code to remove duplicates from an unsorted linked list.
+# 1 two pointers/runners, and while loop with while runner not None (increment runner = runner.next)
+# 2 if runner.value not in array[], array.append() it
+# 3 but if it's in the array, remove it by...
+# 4 previous.next = runner.next, then continue...
+# 
+
 
 # Hints: 9, 40
 # FOLLOW UP: How would you solve this problem if a temporary buffer is not allowed?
