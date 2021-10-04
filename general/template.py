@@ -1,6 +1,6 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # by John Fial, 2021, https://github.com/johnfial/
-# NOTE STATUS    : Started 2021 September
+# NOTE STATUS    : Started 2021 October
 # TODO SUBMITTED : 
 # NOTE Concepts  :  
 # - 

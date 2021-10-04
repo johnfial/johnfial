@@ -1,40 +1,10 @@
 # https://structy.net/problems/connected-components-count
 # connected components count
 
-# Write a function, connected_components_count, that takes in the adjacency list of an undirected graph. The function should return the number of connected components within the graph.
+# Write a function, connected_components_count, that takes in the adjacency list of an undirected graph. 
+# The function should return the number of connected components within the graph.
 
 # NOTE below is from the class definition...
-def has_path_DFS_recursive(self, source, destination, path=[]):
-    if path == []:
-        path.append(source)
-    # https://structy.net/problems/has-path
-    # it's a-cyclic, so don't worry about infinite loop
-    # but if not... make SURE to have visited=[] list!
-    if source == destination:
-        return True
-    for neighbor in self.data[source]:
-        path.append(neighbor)
-        print(f'checking new path {path}')
-        check = self.has_path_DFS_recursive(neighbor, destination, path)
-        if check == True:
-            return True
-    return False
-    # NOTE next step, pass in the path!
-
-
-
-def has_path_DFS_recursive(graph, source, destination, visited=[]):
-    # NOTE because this is a directed (and therefore cyclic) graph, 
-    # it REQUIRES a visited list
-    if source == destination:
-        return True
-    
-    for neighbor in graph[source]:
-        if neighbor not in visited:
-            visited.append(neighbor)
-            if has_path_DFS_recursive(graph, neighbor, destination, visited) == True:
-                return True
-    return False
 
 def connected_components_count(graph):
     connected_components_list = []    
@@ -46,17 +16,8 @@ def connected_components_count(graph):
     for node in graph:
         if explore(graph, node) == True:
             connected_components += 1
-
-    # while visited != to_visit:
-    #     group = []
-    #     for start_node in to_visit:
-    #     TODO here
-    #     connected_components_list.append(group)
-    #     connected_components_list.sort()
-    #     break
-
-    # print(connected_components_list)
-    # return len(connected_components_list)
+            # connected_components_list.append([return_component(graph, node)])
+    print(connected_components_list)
     return connected_components
 
 def explore(graph, current, visited=set()):
@@ -69,7 +30,14 @@ def explore(graph, current, visited=set()):
     
     return True
 
-
+# def return_component(graph, current, visited=set()):
+#     if current in visited:
+#         return False
+    
+#     visited.add(current)
+#     for neighbor in graph[current]:
+#         return_component(graph, neighbor, visited)
+#     return visited
 
 graph1 = {
   0: [8, 1, 5],

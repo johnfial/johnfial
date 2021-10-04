@@ -1,18 +1,42 @@
 # takes in dict with adjacency list + 2 nodes
 # return boolean if path between
 
-from Graph import Graph
+# from Graph import Graph
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-# structy UNDIRECTED PATH
-# TODO 
-# 1 convert graph undirected to adjacency list
-    # mark visited
-# 2 iterate through nodes
-# 3 recurse through neighbors
-    # 4 add to visited list
-    # 5 add num neighbors to group size 
-    # 6 sum group size, add to largest/smallest variable
-# continue
+def has_path_DFS_recursive(graph, source, destination, visited=[]):
+    # NOTE because this is a directed (and therefore cyclic) graph, 
+    # it REQUIRES a visited list
+    if source == destination:
+        return True
+    
+    for neighbor in graph[source]:
+        if neighbor not in visited:
+            visited.append(neighbor)
+            if has_path_DFS_recursive(graph, neighbor, destination, visited) == True:
+                return True
+    return False
+
+def has_path_DFS_recursive(self, source, destination, path=[]):
+    if path == []:
+        path.append(source)
+
+    # https://structy.net/problems/has-path
+    # it's a-cyclic, so don't worry about infinite loop
+    # but if not... make SURE to have visited=[] list!
+
+    if source == destination:
+        return True
+
+    for neighbor in self.data[source]:
+        path.append(neighbor)
+        print(f'checking new path {path}')
+        check = self.has_path_DFS_recursive(neighbor, destination, path)
+        if check == True:
+            return True
+    return False
+
+
+
