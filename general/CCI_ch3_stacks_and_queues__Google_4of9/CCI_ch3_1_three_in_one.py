@@ -37,7 +37,3 @@
 # Hints: 15, 32, 43
 
 
-
-# 3.6 Animal Shelter:
-# 
-# Hints: 22, 56, 56
