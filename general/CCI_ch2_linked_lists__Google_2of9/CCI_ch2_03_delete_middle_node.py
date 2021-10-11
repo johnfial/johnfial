@@ -27,6 +27,23 @@
 # Hints: 
 
 
+def remove_node(head, target_val):
+    cur = head.next
+    prev = head
+    
+    if prev.val == target_val:
+        head = head.next
+        return head
+    
+    while cur.val != target_val:
+        cur = cur.next
+        prev = prev.next
+    
+    # when it IS target_val:
+    prev.next = cur.next    
+    
+    return head
+
 
 
 
