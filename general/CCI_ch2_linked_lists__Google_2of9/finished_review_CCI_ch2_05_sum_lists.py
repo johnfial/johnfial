@@ -1,3 +1,5 @@
+# NOTE NOTE near duplicate of structy.net 023 'add lists'
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # by John Fial, 2021, https://github.com/johnfial/
 # NOTE STATUS    : Started 2021 September
