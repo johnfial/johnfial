@@ -24,19 +24,40 @@ def count_measurements(input):
     # print(f'line {line_number()}')
     
 
-    # for each measurement...
-    for measure in radar_data_as_list:
-        previous = 0
-        previous = measure
-        return
-    # if it's the first, don't count it
-    # track previous
-    # track current
-    # if current > previous, add increase counter
+    
+    differences_dict = {
+        'increases': 0,
+        'decreases': 0,
+        'no change': 0,
+    }
 
-    return count
+    # get first item
+    previous = radar_data_as_list[0]
+
+    # for each measurement...
+    for x in range(1,len(radar_data_as_list)):
+        
+        # ...update current and prev
+        current = radar_data_as_list[x]
+        previous = radar_data_as_list[x-1]
+
+        # 1 if current > previous, add to increases
+        if current > previous:
+            differences_dict['increases'] = differences_dict['increases'] + 1
+        # 2 add to decreases
+        elif current < previous:
+            differences_dict['decreases'] = differences_dict['decreases'] + 1
+        # else add to 'no change'
+        elif current == previous:
+            differences_dict['no change'] = differences_dict['no change'] + 1
+        else:
+            print('error!')
+            return None
+
+    print(differences_dict)
+    return differences_dict['increases']
 
 data = [0]
 print(count_measurements(radar_data_as_list))
-
+print('*' * 20)
 # print(radar_data_as_list)
