@@ -49,7 +49,7 @@ https://dev.to/alekswritescode/easiest-way-to-set-up-your-github-profile-page-3g
 
 ## Random:
 
-- 🔭 I'm currently a teaching assistant with PDX Code Guild!
+<!-- - 🔭 I'm currently a teaching assistant with PDX Code Guild! -->
 - 🌱 See my portfolio at https://johnfial.github.io/ .
 - 💬 Ask me about health and fitness!
 - ⚡ Fun fact: I speak Spanish! ... Pero que?!
