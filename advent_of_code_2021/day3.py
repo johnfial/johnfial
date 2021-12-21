@@ -4,9 +4,9 @@
 file_to_open = 'day3.txt'
 with open(file_to_open, 'r') as file:
     input = file.read()
+output = input.split('\n')
 
-'''
-00100
+output = '''00100
 11110
 10110
 10111
@@ -17,28 +17,59 @@ with open(file_to_open, 'r') as file:
 10000
 11001
 00010
-01010
-'''
+01010'''
+output = output.split('\n')
 
-output = input.split('\n')
-# for x in range(0, len(output)-1):
-#     output[x] = int(output[x])
-# output.pop()
 
 print(output, len(output), type(output))
 
 # https://adventofcode.com/2021/day/3
-def power_consumption(movements):
+def power_consumption(input):
     
     # STEPS:
-    # input
     # create a list of strings
     # loop through each position in all strings, finding MOST and LEAST common bit
+    dict = {
+        # i: count,
+        '0_0': 0,
+        '0_1': 0,
+        '1_0': 0,
+        '1_1': 0,
+        '2_0': 0,
+        '2_1': 0,
+        '3_0': 0,
+        '3_1': 0,
+        '4_0': 0,
+        '4_1': 0,
+        '5_0': 0,
+        '5_1': 0,
+    }
+
+    # TODO problematic
+    for string in input:
+        for x in range(len(string)):
+            print(string[x])
+            if string[x] == 0:
+                dict[str(x) + '_0'] = dict[str(x) + '_0'] + 1
+            elif string[x] == 1:
+                dict[str(x) + '_1'] = dict[str(x) + '_1'] + 1
+            else:
+                print('wtf?!?!?')
+    # count results
+    most_freq = ''
+    least_freq = ''
+    for x in range(len(input[0])):
+        if dict[str(x) + '_0'] > dict[str(x) + '_1']:
+            most_freq += "0"
+            least_freq += "1"
+        else:
+            most_freq += "1"
+            least_freq += "0"
+    print(f'{most_freq} and {least_freq} and dict {dict}')
+
     # take those two end results and convert to binary
     # multiply those two decimal numbers together
 
-
-    print(movements)
     return 
 
 print(power_consumption(output))
