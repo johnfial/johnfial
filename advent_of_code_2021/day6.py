@@ -1,52 +1,104 @@
 # https://adventofcode.com/2021/day/6
 
+# basically just the jacaloupe lab, little more complex
+
 # 1 input and modify file
-file_to_open = 'day3.txt'
+file_to_open = 'day6.txt'
 with open(file_to_open, 'r') as file:
     input = file.read()
-output = input.split('\n')
+output = input.split(',')
 
-output = '''00100
-11110
-10110
-10111
-10101
-01111
-00111
-11100
-10000
-11001
-00010
-01010'''
-output = output.split('\n')
+# convert to integers
+for i in range(len(output)):
+    output[i] = int(output[i])
 
-
-print(output, len(output), type(output))
+# # show input day6.txt
+# print(output, len(output), type(output))
 
 # https://adventofcode.com/2021/day/6
-def lanternfish_reproduce(input):
+def lanternfish_reproduce(input, days=80):
+    # for each lanternfish in list
     
-    return 
+    day = 0
+    while day <days:
+        temp = []
+        for fish in input:
 
-print(lanternfish_reproduce(output))
-print('*' * 20)
+            # if # > 0, new is number minus 1
+            if fish > 0:
+                temp.append(fish-1)
+            
+            # if number == 0, then... number = 6, and append new 8
+            if fish == 0:
+                temp.append(6)  # old fish reset to 7
+                temp.append(8)  # new fish        
+        input = temp.copy()
+        # print(f'After {day+1} days, input={input}, there are {len(input)} fish')
+        print(f'After {day+1} days, there are {len(input)} fish')
+        day += 1
+        
+    return input
 
+lanternfish_reproduce(output)
+
+example = [3,4,3,1,2,]
+days = 18
+# lanternfish_reproduce(example)
+
+print('*' * 50)
+def jackaloup_lab():
+    population = [0,0]    # jackalope population
+    year = 2000    # goes up 1
+
+    while len(population) < 1000:
+
+        # print(f'{year} is year, START of while loop...')
+
+        # Increase age by 1 for each jack in population
+        for i in range(len(population)):
+            # print(f'A {age}-year old jack from list {population} ... ')
+            # new_age = age
+            population[i] += 1
+            # print(f'... becomes a {i + 1}-year old jack from list {population}. ')
+
+        year += 1
+
+        # print(f'len(population) is {len(population)} and list is {population}')
+
+        babies = []
+        for x in population:
+            if x > 3 and x < 9:
+                # print(x)
+                babies.append(0)
+
+        # print(f'population is {(population)}')
+
+        # Add babies to the main population
+        population.extend(babies)
+
+        # BELOW WAS THE DUMBER, MORE COMPLICATED WAY to kill off the elders. Worked <200, started to give list index errors greater than 300 or so...
+        # for i in range(-1,-len(population),-1):
+        #     # print(f'i is {i}')
+        #     if population[i] > 10:
+        #         population.pop(i)
+        #         # population.remove(population[i])
+
+        # ... But after letting us mull it over... Steve shared https://pythonexamples.org/python-remove-all-occurrences-of-item-from-list/
+        # ...which reminded us of the 2 (or even 1) line version:
+        while 11 in population:
+            population.remove(11)
+
+        # print(f'Year is {year}, len(babies) is {len(babies)}, len(population) is {len(population)}. End of while loop...')
+
+
+    # # Final print
+    print(f'Final JACKALOUP len(population) is {len(population)}, and year={year}!')
+
+# print(jackaloup_lab())
 
 
 
 '''
-
-Advent of Code
-
-    [About][Events][Shop][Settings][Log Out]
-
-johnfial 1*
-   int y=2021;
-
-    [Calendar][AoC++][Sponsors][Leaderboard][Stats]
-
-Our sponsors help make Advent of Code possible:
-Retool - Build internal apps remarkably fast. Drag and drop a form together, and have it POST back to your API in minutes. Write JavaScript anywhere to customize. Deploy instantly with access controls and audit logs.
 --- Day 6: Lanternfish ---
 
 The sea floor is getting steeper. Maybe the sleigh keys got carried this way?
@@ -102,9 +154,5 @@ In this example, after 18 days, there are a total of 26 fish. After 80 days, the
 Find a way to simulate lanternfish. How many lanternfish would there be after 80 days?
 
 To begin, get your puzzle input.
-
-Answer:
-
-You can also [Shareon Twitter Mastodon] this puzzle.
 
 '''

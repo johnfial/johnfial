@@ -75,9 +75,6 @@ def power_consumption(input):
 print(power_consumption(output))
 print('*' * 20)
 
-
-
-
 '''
 # --- Day 3: Binary Diagnostic ---
 
