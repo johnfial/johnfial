@@ -5,21 +5,25 @@ Player 1 starting position: 8
 Player 2 starting position: 2
 '''
 
-# BS from airplane 1 jan
+# code dice function 1, 2, 3...
+# global current_dice = 1
+def roll_dice(global current_dice=1, num_rolls=3):
+    num_rolls -= 1
+    current_dice += 1
+    if current_dice == 101:
+        current_dice = 1
+    if num_rolls == 0:
+            return current_dice
 
-# code dice function
+
+
+
+
 # player score, position
 # die_rolled_times
 # if points >= 1000:
     # alt player pts * dice_rolled_times
 # -----
-def roll_dice(start_position=0, num_rolls=3):
-    output = 0
-    for roll in num_rolls:
-        # random logic... A
-        # det logic: B
-        output += start_position
-        start_position + 1
 
 
 
