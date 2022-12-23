@@ -47,31 +47,9 @@ for calorie in calories_list:
 
 ################################################################################
 
-day2_partial_1 = '''C Y
-A Z
-B X
-C Y
-B Y
-C X
-C Y
-B X
-B X
-A Z
-C X
-B Y
-B X
-B X
-A Z'''
-
-
-
-
-# print(rps_list)
-# print(len(rps_list))
+# day 2 rock paper scissors
 
 # make a dict of the possibilities and points
-rps_dictionary = {
-}
 p1 = {
     'A': 'rock', 
     'B': 'paper', 
@@ -80,10 +58,10 @@ p2 = {'X': 'rock',
     'Y': 'paper', 
     'Z': 'scissors'}
 
-# for item in p1:
-    
-#     total = 000
 options = ['rock', 'paper', 'scissors']
+
+# create english dictionary
+rps_dictionary = {}
 for perm1 in options:
     for perm2 in options:
 
@@ -98,38 +76,49 @@ for perm1 in options:
         if (perm2 == 'scissors' and perm1 == 'paper' ) or (perm2 == 'rock' and perm1 == 'scissors') or (perm2 == 'paper' and perm1 == 'rock'):
             rps_dictionary[(perm1, perm2)] = (6, 0)
         
-print(rps_dictionary, '<<<<<<<<<< printing here')
+# print(rps_dictionary, '<<<<<<<<<< printing here') # 
+    #   {('rock', 'rock'): (3, 3), ('rock', 'paper'): (6, 0), ('rock', 'scissors'): (6, 0), ('paper', 'rock'): (6, 0), ('paper', 'paper'): (3, 3), ('paper', 'scissors'): (6, 0), ('scissors', 'rock'): (6, 0), ('scissors', 'paper'): (6, 0), ('scissors', 'scissors'): (3, 3)} <<<<<<<<<< printing here
 
 player_1 = 0
 player_2 = 0
-day2_partial_1= '''A Y
-B X
-C Z'''
-# input data to an easy format... list of tuples?
-rps_list = day2_partial_1.split('\n') # ['A Y', 'B X', 'C Z']
 
-i=0
+# # example:
+# day2_partial_1= '''A Y
+# B X
+# C Z'''
+# rps_list = day2_partial_1.split('\n') # ['A Y', 'B X', 'C Z']
+
+# actual
+file_to_open = 'input_2022_day2.txt'
+with open(file_to_open, 'r') as file:
+    input = file.read()
+rps_list = input.split('\n')
 
 for item in rps_list:
     
     temp = (item[0], item[2])
-    print(temp)
+
+    translated = ((p1[temp[0]]),(p2[temp[1]]))
+    # print(temp)
+    # print(translated)
+    round_score = rps_dictionary[translated]
+    player_1 += round_score[0]
+    player_2 += round_score[1]
     # printout = (rps_dictionary[1], rps_dictionary[1])
     
-    rps_list[i] = temp
-    
-    i += 1
+    # translate ABXY into rock/paper...
+    # pull score by looking up in rps_dictionary
 
-    print(player_1, player_2, f"<<<< end round {[i]}")
+    # print(f'player_1 casts {translated[0]}, player 2 casts {translated[1]}, for scores of {round_score}')
+    # print(f'player_1 score {player_1}, player_1 score {player_2} <<<< end round {[i]}')
 
-# print(rps_list)
-# give each player points for what they play EACH round -- 1 rock, 2 paper, 3 scissors
-# A and X rock, 1 
-# B and Y paper, 2
-# C and Z scissors, 3
-# then give either 3 + 3 for draw, or 0/6 6/0 points for a winner
+print(f'Player 1 = {player_1} and Player 2 = {player_2}')
 
 
+
+# WRONG ANSWER
+# Player 1 = 13755 and Player 2 = 1245
+# 13755 IS TOO HIGH!
 '''
 For example, suppose you were given the following strategy guide:
 
