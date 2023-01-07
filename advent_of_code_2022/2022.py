@@ -75,18 +75,12 @@ for perm1 in options:
         # if p2 wins, give 0, 6
         if (perm2 == 'scissors' and perm1 == 'paper' ) or (perm2 == 'rock' and perm1 == 'scissors') or (perm2 == 'paper' and perm1 == 'rock'):
             rps_dictionary[(perm1, perm2)] = (6, 0)
-        
 # print(rps_dictionary, '<<<<<<<<<< printing here') # 
-    #   {('rock', 'rock'): (3, 3), ('rock', 'paper'): (6, 0), ('rock', 'scissors'): (6, 0), ('paper', 'rock'): (6, 0), ('paper', 'paper'): (3, 3), ('paper', 'scissors'): (6, 0), ('scissors', 'rock'): (6, 0), ('scissors', 'paper'): (6, 0), ('scissors', 'scissors'): (3, 3)} <<<<<<<<<< printing here
-
+#   {('rock', 'rock'): (3, 3), ('rock', 'paper'): (6, 0), ('rock', 'scissors'): (6, 0), ('paper', 'rock'): (6, 0), ('paper', 'paper'): (3, 3), ('paper', 'scissors'): (6, 0), ('scissors', 'rock'): (6, 0), ('scissors', 'paper'): (6, 0), ('scissors', 'scissors'): (3, 3)} <<<<<<<<<< printing here
+       
+# initialize scores
 player_1 = 0
 player_2 = 0
-
-# # example:
-# day2_partial_1= '''A Y
-# B X
-# C Z'''
-# rps_list = day2_partial_1.split('\n') # ['A Y', 'B X', 'C Z']
 
 # actual
 file_to_open = 'input_2022_day2.txt'
@@ -94,31 +88,40 @@ with open(file_to_open, 'r') as file:
     input = file.read()
 rps_list = input.split('\n')
 
-for item in rps_list:
-    
-    temp = (item[0], item[2])
+# # example:
+# day2_partial_1= '''A Y
+# B X
+# C Z'''
+# rps_list = day2_partial_1.split('\n') # ['A Y', 'B X', 'C Z']
 
-    translated = ((p1[temp[0]]),(p2[temp[1]]))
+i=0
+for item in rps_list:
+    # temp indice counter to limit rounds:
+    i += 1
+    if i > 9:
+        break
+    
+    # place the 'A' and 'Y' in indices 0 and 2 into a tuple of two strings
+    temp = (item[0], item[2])
     # print(temp)
-    # print(translated)
+
+    # lookup each in the identical dictionaries ()
+    translated = ((p1[temp[0]]),(p2[temp[1]]))
+    print(translated)
+
     round_score = rps_dictionary[translated]
     player_1 += round_score[0]
     player_2 += round_score[1]
-    # printout = (rps_dictionary[1], rps_dictionary[1])
     
-    # translate ABXY into rock/paper...
-    # pull score by looking up in rps_dictionary
+    # print(f'~~~ROUND {i}~~~\n~player_1 casts {translated[0]}, player 2 casts {translated[1]}, for scores of {round_score}.\n~Currently player_1 score: {player_1}, player_2 score: {player_2} <<<< end round {[i]}')
+    
 
-    # print(f'player_1 casts {translated[0]}, player 2 casts {translated[1]}, for scores of {round_score}')
-    # print(f'player_1 score {player_1}, player_1 score {player_2} <<<< end round {[i]}')
-
-print(f'Player 1 = {player_1} and Player 2 = {player_2}')
-
-
-
+print(f'~~~FINAL SCORES: ~~~\nPlayer 1 = {player_1} and Player 2 = {player_2}')
 # WRONG ANSWER
 # Player 1 = 13755 and Player 2 = 1245
-# 13755 IS TOO HIGH!
+# 13755 IS TOO HIGH! #13749 too high as well
+
+
 '''
 For example, suppose you were given the following strategy guide:
 
