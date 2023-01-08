@@ -41,23 +41,29 @@ Some of the pairs have noticed that one of their assignments fully contains the 
 In how many assignment pairs does one range fully contain the other?'''
 
 
-example_1 = '''.234.....  2-4
-.....678.  6-8
-
-.23......  2-3
-...45....  4-5
-
-....567..  5-7
-......789  7-9
-
-.2345678.  2-8
-..34567..  3-7
-
-.....6...  6-6
-...456...  4-6
-
-.23456...  2-6
-...45678.  4-8'''
+example_1 = '''2-4,6-8
+2-3,4-5
+5-7,7-9
+2-8,3-7
+6-6,4-6
+2-6,4-8'''
 
 # # example:
 name = example_1.split('\n') # ['A Y', 'B X', 'C Z']
+set_list = []
+for item in name:
+    temp = item.split('-')
+    range_1 = temp[0].split(',')
+    print(temp, range_1)
+
+# brainstorm
+    # make a list ... or set?
+    # if a list contains the other, mark it... and its index?
+
+count = 0
+# for set_item in set_list:
+#     if set_item(1) in set_item(2): 
+#         count += 1
+    # just count those
+
+print(count)
