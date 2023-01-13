@@ -1,3 +1,4 @@
+# https://adventofcode.com/2022/day/4
 '''
 --- Day 4: Camp Cleanup ---
 Space needs to be cleared before the last supplies can be unloaded from the ships, and so several Elves have been assigned the job of cleaning up sections of the camp. Every section has a unique ID number, and each Elf is assigned a range of section IDs.
@@ -40,7 +41,6 @@ Some of the pairs have noticed that one of their assignments fully contains the 
 
 In how many assignment pairs does one range fully contain the other?'''
 
-
 example_1 = '''2-4,6-8
 2-3,4-5
 5-7,7-9
@@ -49,21 +49,78 @@ example_1 = '''2-4,6-8
 2-6,4-8'''
 
 # # example:
-name = example_1.split('\n') # ['A Y', 'B X', 'C Z']
-set_list = []
-for item in name:
-    temp = item.split('-')
-    range_1 = temp[0].split(',')
-    print(temp, range_1)
+list_of_assignments = ['2-4,6-8', '2-3,4-5', '5-7,7-9', '2-8,3-7', '6-6,4-6', '2-6,4-8']
+list_of_assignments = example_1.split('\n')
+# print(list_of_assignments)  # ['2-4,6-8', '2-3,4-5', '5-7,7-9', '2-8,3-7', '6-6,4-6', '2-6,4-8']
 
-# brainstorm
-    # make a list ... or set?
-    # if a list contains the other, mark it... and its index?
+# actual:
+file_to_open = 'day4.txt'
+with open(file_to_open, 'r') as file:
+    input = file.read()
+list_of_assignments = input.split('\n')
 
-count = 0
-# for set_item in set_list:
-#     if set_item(1) in set_item(2): 
-#         count += 1
-    # just count those
+count = 0           # part 1
+overlap_at_all = 0  # part 2
 
-print(count)
+for i in range(len(list_of_assignments)):
+
+    # if i > 0: break  # for testing
+
+    # for each pair of elves, 'temp' variable to convert to end results and increment counter(s)
+    temp = list_of_assignments[i]
+    temp = temp.split(',')
+    # print(temp)
+    
+    # for a/b (range(2)), gets the range separated by '-' into a list of two sets, as "temp" variable...
+    for x in range(2): 
+        
+        group_range = temp[x].split('-') # creates a two item list[]
+        # print(group_range)
+
+        # using num_current, iterates through the range creating a set {} with those numbers
+        num_current = int(group_range[0])
+        num_end = int(group_range[1])
+        group_range = set()
+        while num_current <= num_end:
+            group_range.add(num_current)
+            num_current += 1
+        
+        # place that group range back into the a/b half of the 'temp' variable
+        temp[x] = group_range
+        # print(f'<<< end group_range = {group_range}, print(type(group_range)) = {type(group_range)}')
+
+    # --- Part One --- ...checks if one set overlaps...
+
+    # print(temp[0],  type(temp[0]), '<<<< temp[0]', ">>>>> temp[1]", type(temp[1]), temp[1])    
+    if (temp[0].issuperset(temp[1]) == True) or (temp[1].issuperset(temp[0]) == True):
+        # print('~~~~COUNTER DING!')
+        count += 1
+    
+    # --- Part Two --- 
+    
+    if (temp[0].isdisjoint(temp[1]) == False) or (temp[1].isdisjoint(temp[0]) == False):
+        # print('~~~~COUNTER DING!')
+        overlap_at_all += 1
+
+    # set the temp back into the list, which is unnecessary for this problem, but could be useful
+    list_of_assignments[i] = temp
+
+# print(f'list_of_assignments {list_of_assignments}, and count={count}, overlap_at_all = {overlap_at_all}')
+print(f'count={count}, overlap_at_all = {overlap_at_all}')
+
+
+
+'''
+--- Part Two ---
+It seems like there is still quite a bit of duplicate work planned. Instead, the Elves would like to know the number of pairs that overlap at all.
+
+In the above example, the first two pairs (2-4,6-8 and 2-3,4-5) don't overlap, while the remaining four pairs (5-7,7-9, 2-8,3-7, 6-6,4-6, and 2-6,4-8) do overlap:
+
+5-7,7-9 overlaps in a single section, 7.
+2-8,3-7 overlaps all of the sections 3 through 7.
+6-6,4-6 overlaps in a single section, 6.
+2-6,4-8 overlaps in sections 4, 5, and 6.
+So, in this example, the number of overlapping assignment pairs is 4.
+
+In how many assignment pairs do the ranges overlap?
+'''
