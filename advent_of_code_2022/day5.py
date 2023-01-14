@@ -1,3 +1,5 @@
+# https://adventofcode.com/2022/day/5
+
 '''--- Day 5: Supply Stacks ---
 The expedition can depart as soon as the final supplies have been unloaded from the ships. Supplies are stored in stacks of marked crates, but because the needed supplies are buried under many other crates, the crates need to be rearranged.
 
@@ -59,3 +61,41 @@ After the rearrangement procedure completes, what crate ends up on top of each s
 # with open(file_to_open, 'r') as file:
 #     input = file.read()
 # list_of_assignments = input.split('\n')
+
+
+# https://adventofcode.com/2022/day/5
+# 1 convert the first X lines into the lists
+example_boxes = '''
+    [D]    
+[N] [C]    
+[Z] [M] [P]
+ 1   2   3 '''
+
+# counter = 0
+# for i in range(len(example_boxes)):
+#     if example_boxes[i] == '[':
+#         print(example_boxes[i+1])
+#         counter += 1
+
+# print(f'counter = {counter}')
+
+# 2 create a practice list manually
+
+boxes_list = [
+    ['N', 'Z'],
+    ['D', 'C', 'M'],
+    ['P']
+]  # outer array from left to right, inner array: starting from bottom box, with top box as higher index
+
+# print the box output:
+for i in range(len(boxes_list)):
+    line = ''
+    for item in boxes_list[i]:
+        line += f'[{item}]'
+
+    print(line)
+
+
+# quicker -- lookup how to rotate a printed map/grid/array in python?
+
+# convert the other lines into the moves... tuples in an array, maybe? then loop over the array?
