@@ -64,46 +64,34 @@ example_moves = example_moves.split('\n')
 print(example_moves)
 list_of_moves = example_moves
 
-# # actual:
-# file_to_open = 'day5.txt'
-# with open(file_to_open, 'r') as file:
-#     input = file.read()
-# list_of_moves = input.split('\n')
-# print(len(list_of_moves))
-# # actual list starts at line 11, so slice off index 0 through 10:
-# list_of_moves =  list_of_moves[:10]
-# # test print to see if it sliced properly
-# print(list_of_moves[0:10])
-
+# actual:
+file_to_open = 'day5.txt'
+with open(file_to_open, 'r') as file:
+    input = file.read()
+list_of_moves = input.split('\n')
+print(len(list_of_moves))
+# actual list starts at line 11, so slice off index 0 through 10:
+list_of_moves =  list_of_moves[:10]
+# test print to see if it sliced properly
+print(list_of_moves[0:10])
+print(list_of_moves)
 for i in range(len(list_of_moves)):
     temp = list_of_moves[i]
     temp = temp.split(' ') # ['move', '1', 'from', '2', 'to', '1'] # len = 6, index 0 through 5
+    print(temp)
     # SUBTRACT 1, BECAUSE THE INPUT USES HUMAN NUMBERS, but we want an index
     temp = (int(temp[1]), int(temp[3])-1, int(temp[5])-1) # (number_to_move, stack_source, stack_dest)
     list_of_moves[i] = temp
-    # print(temp, '<<<< (number_to_move, stack_source, stack_dest)')
+    print(temp, '<<<< (number_to_move, stack_source, stack_dest)')
 
-print(list_of_moves)
-    
-
-
-
+# print(list_of_moves)
 
 # STEP 2: convert the first X lines into the lists
-
 example_boxes = '''
     [D]    
 [N] [C]    
 [Z] [M] [P]
  1   2   3 '''
-
-# counter = 0
-# for i in range(len(example_boxes)):
-#     if example_boxes[i] == '[':
-#         print(example_boxes[i+1])
-#         counter += 1
-
-# print(f'counter = {counter}')
 
 # 2 create a practice list manually:
 boxes_list = [
@@ -151,7 +139,7 @@ def print_output(boxes_list_input):
 
 # STEP 3: move the boxes!
 
-print(boxes_list)
+print(boxes_list, '<<< before')
 # convert the other lines into the moves... tuples in an array, maybe? then loop over the array? 
 # use a STACK, which is just a list in python using only .pop() and .append()
 
@@ -166,6 +154,7 @@ print(boxes_list)
 
 print('*' * 50)
 
+# STEP 3: move the boxes!
 for move_index in range(len(list_of_moves)):
 
     # unpack
@@ -181,4 +170,5 @@ for move_index in range(len(list_of_moves)):
         boxes_list[stack_dest].append(temp_box)
         # print(boxes_list)
 
-print(boxes_list)
+print(boxes_list, '<<< after')
+print([box_list[0] for box_list in boxes_list], '                     <<< tops')
