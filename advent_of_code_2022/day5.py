@@ -64,6 +64,8 @@ example_moves = example_moves.split('\n')
 print(example_moves)
 list_of_moves = example_moves
 
+print('* ' * 50)
+
 # actual:
 file_to_open = 'day5.txt'
 with open(file_to_open, 'r') as file:
@@ -139,7 +141,7 @@ def print_output(boxes_list_input):
 
 # STEP 3: move the boxes!
 
-print(boxes_list, '<<< before')
+# print(boxes_list, '<<< before')
 # convert the other lines into the moves... tuples in an array, maybe? then loop over the array? 
 # use a STACK, which is just a list in python using only .pop() and .append()
 
