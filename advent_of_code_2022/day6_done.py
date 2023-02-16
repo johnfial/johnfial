@@ -1,4 +1,6 @@
 # https://adventofcode.com/2022/day/6
+# Part One: Easy
+# Part Two: Extremely Easy
 
 '''--- Day 6: Tuning Trouble ---
 The preparations are finally complete; you and the Elves leave camp on foot and begin to make your way toward the star fruit grove.
@@ -64,27 +66,63 @@ def find_marker(input):
         test = set(list(input[a:b]))
 
     print(a, b)
-    # print(a, b, test)
 
     # NOTE EDGE  1 - input less than length 4, b pointer; or None
     # NOTE EDGE 2 - 
     return b
 
+# # test examples:
 # print(find_marker(ex1))
-# 
 # if find_marker(ex5) == answer5: print('yay! ' * 20)
 
-
+# actual part 1
 file_to_open = 'day6.txt'
 with open(file_to_open, 'r') as file:
     day6_part1 = file.read()
-# day6_part1 = input.split('\n')
 
 print(find_marker(day6_part1))
 
+'''--- Part Two ---
+Your device's communication system is correctly detecting packets, but still isn't working. It looks like it also needs to look for messages.
+
+A start-of-message marker is just like a start-of-packet marker, except it consists of 14 distinct characters rather than 4.
+
+Here are the first positions of start-of-message markers for all of the above examples:
+
+mjqjpqmgbljsphdztnvjfqwrcgsmlb: first marker after character 19
+bvwbjplbgvbhsrlpgdmjqwftvncz: first marker after character 23
+nppdvjthqldpwncqszvftbrmjlhg: first marker after character 23
+nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg: first marker after character 29
+zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw: first marker after character 26
+How many characters need to be processed before the first start-of-message marker is detected?'''
 
 
+def part_2_copied(input):
+    a = 0
+    b = 14
 
+    # create a set out of the items/list of letters
+    test = set(list(input[a:b]))
+    
+    while (len(test) < 14):
+        
+        # check: if b is over length, break:
+        if b > len(input) == True:
+            break
+
+        # increment indices & reset set:
+        a += 1
+        b += 1
+        test = set(list(input[a:b]))
+
+    print(a, b)
+
+    # NOTE EDGE  1 - input less than length 4, b pointer; or None
+    # NOTE EDGE 2 - 
+    return b
+
+print('8' * 50, '<<< Part Two ---')
+print(part_2_copied(day6_part1))
 
 
 
