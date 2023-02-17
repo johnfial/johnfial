@@ -102,7 +102,6 @@ $ ls
 7214296 k'''
 
 ex1_io = ex1_string.split('\n')
-print(len(ex1_io), type(ex1_io))
 
 # actual part 1
 file_to_open = 'day7.txt'
@@ -110,52 +109,102 @@ with open(file_to_open, 'r') as file:
     day7_part1 = file.read()
 
 day7_io = day7_part1.split('\n')
-# print(type(day7_io), len(day7_io))
 
-print(ex1_io[0:5])
+print(type(ex1_io), len(ex1_io), ex1_io[:5])
+print(type(day7_io), len(day7_io), day7_io[:10])
 
 # brute #1, almost certainly will be way too high with duplicate files:
-    # brute: get file size from each line with a file -- breaks if any commands/lines start with integers
-
+# brute: get file size from each line with a file -- breaks if any commands/lines start with integers
 def brute_force(input_commands):
     size = 0
     counter =0
 
     # loop over every line
-    for command in input_commands:
+    for line in input_commands:
         counter += 1
 
         # if the first char is an int (easier to do keeping it strings)...
-        if command[0] in '0123456789':
+        if line[0] in '0123456789':
             # ... split the size and filename, add size to total
-            parsing = command.split(' ')
+            parsing = line.split(' ')
             size += int(parsing[0])
         
     print(f'counter of lines in input = {counter}')
     return size
 
-print(brute_force(ex1_io))
-
+# print(brute_force(ex1_io))
 # 48,381,165 (example brute force) -- correct for example
+
 # print(brute_force(day7_io)) 
 # 44,965,705 (actual brute force) too high
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-# HOW TO create a map for paths...
-# do I need a tree/trie?
-# for each file, lookup its path. create a new path
 # PART 1 -
+
+def find_size(input_commands):
+    size = 0
+    pwd = ''
+    counter = 0
+    file_tree = {}
+
+    for line in input_commands:
+        print(f'current $PWD = {pwd}, line = `{line}`, number {counter} ')
+        counter += 1
+
+        if line[0:4] == '$ cd':
+            ignore1, ignore2, destination = line.split(' ') # print(ignore1, '***', ignore2, destination)
+            pwd += destination
+
+            if destination == '..':
+                print('cd ................. command!!!')
+                # WORKING HERE:
+                # chop from previous /
+                # example /one/two/three/four
+                # cd ..
+                # one/two/three
+                # TODO: working here, cutoff
+
+
+        # if it's a file, it starts with an integer, so count it
+        if line[0] in '0123456789':
+            size, file = line.split(' ')
+            if file in file_tree: 
+                print(f'PASSING already seen files {file} !')
+                continue
+
+            # print(f'file {file} is size {size}')
+            
+            # add the PWD
+            file = pwd + file
+
+            # add the filesize with path as unique key
+            file_tree[file] = size
+        
+
+        # TODO dir output ??
+        if line[0:3] == 'dir':
+            dir_type, name = line.split(' ')
+            # print(dir_type, name, '*********')
+
+        # TODO ls command
+        
+        # TODO cd .. command
+
+
+        if counter == 30: break
+
+    print(file_tree)
+
+print(find_size(day7_io))
+
+# HOW TO create a map for paths... # do I need a tree/trie?
+# for each file, lookup its path. create a new path
 #  make a PWD that sets the working dir based on $ cd... and $ cd .. commands. adding or chopping from the PWd string...
 # for each file (starts with number), lookup if its path exists in the file_tree {} dict. If yes, skip, otherwise add its path as key and size as value
   # also add its size to the size of all parent directories (this would be by adding to each )
 
-
-
-
-
 # ^ breaks if 'ls' is repeated in any directory...
-# create a list / tree, branching with a/b/c nodes under? hwo do I do tree structure again?
 # 
 # BRAINSTORM:
 # count from "$ ls" through to next /n 
