@@ -188,8 +188,11 @@ def find_size(input_commands):
             # print(dir_type, name, '*********')
 
         # TODO ls command
+            
         
         # TODO cd .. command
+            # make a list, splitting at '/', pop off last, then append back together?
+            # ppop off from end to .find / stepping backwards to first '/' ?
 
 
         if counter == 30: break
