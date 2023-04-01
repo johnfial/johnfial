@@ -110,7 +110,7 @@ with open(file_to_open, 'r') as file:
 
 day7_io = day7_part1.split('\n')
 
-print(type(ex1_io), len(ex1_io), ex1_io[:5])
+# print(type(ex1_io), len(ex1_io), ex1_io[:5])
 print(type(day7_io), len(day7_io), day7_io[:10])
 
 # brute #1, almost certainly will be way too high with duplicate files:
@@ -146,60 +146,94 @@ def find_size(input_commands):
     size = 0
     pwd = ''
     counter = 0
-    file_tree = {}
+    file_tree = {'/': 0,}
+
+    # TODO # change from per line to two pointer approach?
 
     for line in input_commands:
-        print(f'current $PWD = {pwd}, line = `{line}`, number {counter} ')
+        print(f'   >>>> {counter} <<<< counter, current $PWD = {pwd}, line/command = `{line}`')
         counter += 1
+            
+        if counter == 20: break
 
+        # if it's cd, change PWD variable
         if line[0:4] == '$ cd':
-            ignore1, ignore2, destination = line.split(' ') # print(ignore1, '***', ignore2, destination)
-            pwd += destination
+            ignore1, ignore2, destination = line.split(' ') 
+            # print(ignore1, '***', ignore2, destination)
 
             if destination == '..':
-                print('cd ................. command!!!')
-                # WORKING HERE:
-                # chop from previous /
-                # example /one/two/three/four
-                # cd ..
-                # one/two/three
-                # TODO: working here, cutoff
 
+                
+                # find the LAST '/' by working in reverse
+                index = pwd[::-1].find('/')
+                
+                # print(f'current PWD = {pwd}')
+                # print(pwd[::-1])
+                # print(index)
+                
+                #new $PWD is previous by chopping off until the end '/'
+                pwd = pwd[ :: index+1 ]
+                print(f'current PWD changed to = {pwd}')
+                continue
+            
+            # else:
+            pwd += destination
+            print(f'current PWD changed to = {pwd}')
 
-        # if it's a file, it starts with an integer, so count it
+        # if it's a file, it starts with an integer, so count it, add its path:size to dict, and sum its size to its parent
         if line[0] in '0123456789':
             size, file = line.split(' ')
+            size = int(size)
+            
+            # add the PWD for a unique key
+            file = pwd + file
+            
             if file in file_tree: 
                 print(f'PASSING already seen files {file} !')
                 continue
-
-            # print(f'file {file} is size {size}')
             
-            # add the PWD
-            file = pwd + file
+            print(f'file {file} is size {size}, adding to file_tree')
 
             # add the filesize with path as unique key
             file_tree[file] = size
+
+            # WORKING HERE !!! NOTE TODO ???  
+            # NOTE this only does this for ONE parent... best way to do it for EACH parent dir? Or sum up all at end somehow?
+            # ... or actually use a tree?
+
+            # chop off ../ and add size to parent!
+            index = pwd[::-1].find('/')
+            parent = pwd[ :: index+1 ]
+            print(parent)
+            print(index, type(parent), parent, file_tree.get(parent))
+            
+            try: # if parent dir exists...
+                parent_size = file_tree.get(parent)
+                file_tree[parent] = (parent_size + size)
+
+            except: # ... no parent dir exists yet
+                file_tree[parent] = size
+
+            print(f'line ~209 parent_size = {parent_size} | file_tree[parent] = {file_tree[parent]} ')
         
 
         # TODO dir output ??
         if line[0:3] == 'dir':
             dir_type, name = line.split(' ')
-            # print(dir_type, name, '*********')
+            # print('dir commnd >>>>>', dir_type, name, '*********')
+            # TODO: add PWD to file list so parent exists?
 
-        # TODO ls command
-            
-        
-        # TODO cd .. command
-            # make a list, splitting at '/', pop off last, then append back together?
-            # ppop off from end to .find / stepping backwards to first '/' ?
-
-
-        if counter == 30: break
+        # # TODO ls command... skip?
+        # if line[0:2] == 'ls':
+        #     continue
 
     print(file_tree)
+    # END function()
+    return file_tree['/']
 
 print(find_size(day7_io))
+
+# BRAINSTORM:
 
 # HOW TO create a map for paths... # do I need a tree/trie?
 # for each file, lookup its path. create a new path
@@ -208,8 +242,8 @@ print(find_size(day7_io))
   # also add its size to the size of all parent directories (this would be by adding to each )
 
 # ^ breaks if 'ls' is repeated in any directory...
-# 
-# BRAINSTORM:
+
+
 # count from "$ ls" through to next /n 
 # split all into commands
 # parse commands:
