@@ -1,19 +1,14 @@
-*.lnk
-
-*password*.py
-*password*.md
-*password*
-
+# Python
+__pycache__/
 *.pyc
-*.secrets
-*secrets
-secrets.*
-secrets.py
-*secrets*
-*secrets*.*
-~secrets.py
-*secrets.md
-~secrets.md
-~secrects copy.md
-*secrets*.md
-*secret*.py
+*.sqlite3
+
+# Local-only files
+*.lnk
+.settings/
+.DS_Store
+Thumbs.db
+
+# Never commit secrets
+*secret*
+*password*
